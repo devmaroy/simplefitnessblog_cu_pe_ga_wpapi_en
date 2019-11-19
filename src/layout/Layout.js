@@ -1,18 +1,21 @@
 import React, { Fragment } from 'react';
-import { createGlobalStyle } from 'styled-components';
+import { ThemeProvider, createGlobalStyle } from 'styled-components';
+import theme from '../theme/theme';
 
 const GlobalStyles = createGlobalStyle`
     body {
-        background: cyan;
+        background: ${ props => props.theme.colors.bgc };
     }
 `;
 
 const Layout = ( { children }) => {
     return (
-        <Fragment>
-            <GlobalStyles />
-            { children }
-        </Fragment>
+        <ThemeProvider theme={ theme }>
+            <Fragment>
+                <GlobalStyles />
+                { children }
+            </Fragment>
+        </ThemeProvider>
     );
 };
 
