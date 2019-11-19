@@ -1,6 +1,6 @@
 // Colors
 const colors = {
-    bgc: 'magenta'
+    background: '#FFF'
 }
 
 export default {
