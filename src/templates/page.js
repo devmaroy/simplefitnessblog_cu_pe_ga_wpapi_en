@@ -4,7 +4,7 @@ import Layout from '../layout/Layout';
 const page = () => {
     return (
         <Layout>
-            page template
+            page is here
         </Layout>
     );
 };
