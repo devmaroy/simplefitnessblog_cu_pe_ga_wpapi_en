@@ -4,10 +4,8 @@ import { Normalize } from 'styled-normalize';
 import theme from '../theme/theme';
 
 const GlobalStyles = createGlobalStyle`
-
-
     body {
-        background: ${ props => props.theme.colors.bgc };
+        background: ${ props => props.theme.colors.background };
     }
 `;
 
