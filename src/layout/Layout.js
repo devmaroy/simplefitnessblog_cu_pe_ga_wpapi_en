@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { Normalize } from 'styled-normalize';
 import theme from '../theme/theme';
+import Header from './Header';
 
 const GlobalStyles = createGlobalStyle`
     body {
@@ -15,6 +16,7 @@ const Layout = ( { children }) => {
             <Fragment>
                 <GlobalStyles />
                 <Normalize />
+                <Header />
                 { children }
             </Fragment>
         </ThemeProvider>
