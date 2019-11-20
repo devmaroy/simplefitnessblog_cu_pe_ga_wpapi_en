@@ -1,11 +1,11 @@
 import React from 'react';
-import SiteInfo from './SiteInfo';
+import SiteLogo from './SiteLogo';
 import Navigation from './Navigation';
 
 const Header = () => {
     return (
         <header>
-            <SiteInfo />
+            <SiteLogo />
             <Navigation />
         </header>
     );
