@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { Normalize } from 'styled-normalize';
 import theme from '../theme/theme';
-import Header from './Header';
+import Header from './Header/Header';
 
 const GlobalStyles = createGlobalStyle`
     body {
