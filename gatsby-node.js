@@ -53,6 +53,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // Create Page pages.
   const pageTemplate = path.resolve(`./src/templates/page.js`)
+  const postsUnderContentTemlate = path.resolve(`./src/templates/postsUnderContent.js`)
   // We want to create a detailed page for each page node.
   // The path field contains the relative original WordPress link
   // and we use it for the slug to preserve url structure.
@@ -67,7 +68,7 @@ exports.createPages = async ({ graphql, actions }) => {
       // optional but is often necessary so the template
       // can query data specific to each page.
       path: `${ edge.node.slug }`,
-      component: slash(pageTemplate),
+      component: slash( edge.node.template === 'posts_under_content.php' ? postsUnderContentTemlate : pageTemplate),
       context: {
         id: edge.node.id,
       },
