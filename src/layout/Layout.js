@@ -15,6 +15,7 @@ const GlobalStyles = createGlobalStyle`
     body {
         font-family: 'Lato', sans-serif;
         font-size: 1.6rem;
+        line-height: 1.6;
         background: ${ props => props.theme.colors.background };
     }
 `;
