@@ -3,7 +3,6 @@ import { graphql } from 'gatsby';
 import Layout from '../layout/Layout';
 import Container from '../layout/Container';
 
-
 const postsUnderContent = ( { data } ) => {
     return (
         <Layout>
