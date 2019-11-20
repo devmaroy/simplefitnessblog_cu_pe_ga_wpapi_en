@@ -5,18 +5,19 @@ import SiteLogo from './SiteLogo';
 import Navigation from './Navigation';
 
 const HeaderWrapper = styled.header`
-    margin: 2rem 0;
-    color: black;
+    display: flex;
+    justify-content: space-between;
+    margin: 3rem 0;
 `;
 
 const Header = () => {
     return (
-        <HeaderWrapper>
-            <Container>
+        <Container>
+            <HeaderWrapper>
                 <SiteLogo />
                 <Navigation />
-            </Container>
-        </HeaderWrapper>
+            </HeaderWrapper>
+        </Container>
     );
 };
 
