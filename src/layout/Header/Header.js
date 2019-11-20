@@ -1,9 +1,12 @@
 import React from 'react';
+import SiteInfo from './SiteInfo';
+import Navigation from './Navigation';
 
 const Header = () => {
     return (
         <header>
-            Logo will be here and navigation too
+            <SiteInfo />
+            <Navigation />
         </header>
     );
 };
