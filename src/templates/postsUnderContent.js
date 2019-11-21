@@ -4,9 +4,13 @@ import styled from 'styled-components';
 import Layout from '../layout/Layout';
 import Hero from '../components/hero/Hero';
 import Container from '../layout/Container';
-import Post from '../components/post/Post';
+import Teaser from '../components/post/Teaser';
 
-
+    /*<article key={ node.id }>
+                            <h3>{ node.title }</h3>
+                            <img src={ node.featured_media.source_url } alt="Post image" />
+                            <div dangerouslySetInnerHTML={ { __html: node.excerpt } } />
+                    </article>*/
 const PostsWrapper = styled.div`
     
 `;
@@ -18,12 +22,8 @@ const postsUnderContent = ( { data } ) => {
                 <Hero data={ data.page } />
                 <PostsWrapper>
                     { data.posts.edges.map( ( { node } ) => (
-                        <article key={ node.id }>
-                            <h3>{ node.title }</h3>
-                            <img src={ node.featured_media.source_url } alt="Post image" />
-                            <div dangerouslySetInnerHTML={ { __html: node.excerpt } } />
-                        </article>
-                    )) }
+                        <Teaser post={ node } key={ node.id } />
+                    ))}
                 </PostsWrapper>
             </Container>
         </Layout>
@@ -47,12 +47,19 @@ export const PostsUnderContentQuery = graphql`
                 source_url
             }
         }
-        posts: allWordpressPost {
+        posts: allWordpressPost( sort: { fields: [date], order: DESC } ) {
             edges {
                 node {
                     id
                     title
+                    slug
+                    plainDate: date
+                    date( formatString: "MMMM DD, YYYY" )
                     excerpt
+                    categories {
+                        id
+                        name
+                    }
                     featured_media {
                         source_url
                     }
