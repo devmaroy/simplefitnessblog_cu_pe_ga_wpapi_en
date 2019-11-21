@@ -1,6 +1,10 @@
 // Colors
 const colors = {
-    background: '#FFF'
+    primary: '#FF9226',
+    secondary: '#F4CA55',
+    white: '#FFF',
+    dark: '#303838',
+    background: '#FFF',
 }
 
 
@@ -22,7 +26,7 @@ const fonts = {
         elements: {
             heading: 700,
             text: 400,
-            blockquote: 300
+            blockquote: 300,
         }
     }
 }
