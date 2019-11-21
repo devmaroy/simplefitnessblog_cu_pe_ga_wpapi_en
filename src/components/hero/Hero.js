@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const HeroWrapper = styled.div`
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), ${ props => `url( ${ props.image } )`} center center/cover no-repeat;
-    margin: 8rem 0;
+    margin: 6rem 0;
     padding: 4rem;
     display: flex;
     flex-direction: column;
