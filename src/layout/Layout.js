@@ -18,6 +18,11 @@ const GlobalStyles = createGlobalStyle`
         line-height: 1.6;
         background: ${ props => props.theme.colors.background };
     }
+
+    img {
+        max-width: 100%;
+        //height: auto;
+    }
 `;
 
 const Layout = ( { children }) => {
