@@ -8,6 +8,7 @@ const colors = {
     lightGray: '#adadad',
     background: '#FFF',
     transparentBlack: 'rgba( 0, 0, 0, .5 )',
+    overlayLinearGradient: 'linear-gradient( rgba( 0, 0, 0, 0.5 ), rgba( 0, 0, 0, 0.5 ) )',
 }
 
 
