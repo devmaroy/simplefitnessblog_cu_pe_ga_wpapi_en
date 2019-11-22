@@ -1,8 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
-import Layout from '../layout/Layout';
-import Container from '../layout/Container';
+import Layout from '../layout/base/Layout';
+import Container from '../layout/base/Container';
 import Hero from '../components/hero/Hero';
 import Teaser from '../components/post/Teaser';
 

@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { Normalize } from 'styled-normalize';
-import theme from '../theme/theme';
-import Header from './header/Header';
-import Footer from './footer/Footer';
+import theme from '../../theme/theme';
+import Header from '../header/Header';
+import Footer from '../footer/Footer';
 
 const GlobalStyles = createGlobalStyle`
     @import url('https://fonts.googleapis.com/css?family=Karla:400,400i,700,700i|Rubik:400,500,700,900&display=swap&subset=latin-ext');

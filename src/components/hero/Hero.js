@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Container from '../../layout/Container';
+import Container from '../../layout/base/Container';
 
 const HeroWrapper = styled.div`
     display: flex;

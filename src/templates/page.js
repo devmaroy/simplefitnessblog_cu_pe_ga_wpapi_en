@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../layout/Layout';
+import Layout from '../layout/base/Layout';
 import { graphql } from 'gatsby';
 
 const page = ( { data } ) => {

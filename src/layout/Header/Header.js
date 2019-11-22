@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Container from '../Container';
+import Container from '../base/Container';
 import SiteLogo from './SiteLogo';
 import Navigation from './Navigation';
 
