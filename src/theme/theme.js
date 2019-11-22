@@ -7,6 +7,7 @@ const colors = {
     gray: '#797475',
     lightGray: '#adadad',
     background: '#FFF',
+    transparentBlack: 'rgba( 0, 0, 0, .5 )',
 }
 
 
