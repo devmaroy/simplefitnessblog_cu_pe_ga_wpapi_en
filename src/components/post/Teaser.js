@@ -2,6 +2,10 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { darken } from 'polished';
+import { ButtonPrimary } from '../elements/Button';
+
+
+// Styles
 
 const Article = styled.article`
     &:not( :last-child ) {
@@ -21,15 +25,15 @@ const Meta = styled.div`
 `;
 
 const Categories = styled.span`
-    color: ${ props => props.theme.colors.primary };
     text-transform: uppercase;
+    color: ${ props => props.theme.colors.primary };
 
     &::after {
-        content:"\u2022";
+        content: "\u2022";
         font-size: 2rem;
+        margin: 0 1.5rem; 
         vertical-align: middle;
         color: ${ props => props.theme.colors.secondary };
-        margin: 0 1.5rem; 
     }
 `;
 
@@ -37,12 +41,21 @@ const Time = styled.time`
     color: ${ props => props.theme.colors.lightGray };
 `;
 
+const TitleLink = styled( Link )`
+    color: ${ props => props.theme.colors.dark };
+    transition: ${ props => props.theme.transitions.link };
+
+    &:hover,
+    &:focus {
+        color: ${ props => darken( 0.1, props.theme.colors.dark ) };
+    }
+`;
+
 const Title = styled.h2`
     font-family: ${ props => props.theme.fonts.secondary };
     font-size: 2.8rem;
-    line-height: 3.4rem;
     font-weight: ${ props => props.theme.fonts.weights.bold };
-    color: ${ props => props.theme.colors.dark };
+    line-height: 3.4rem;
     margin: 3rem 0;
 `;
 
@@ -56,26 +69,10 @@ const Content = styled.div`
     }
 `;
 
-const ReadMore = styled( Link )`
-    font-weight: ${ props => props.theme.fonts.weights.bold };
-    margin-top: 4rem;
-
-    background: ${ props => props.theme.colors.primary };
-    display: inline-block;
-    padding: 1.2rem 2rem;
-    color: ${ props => props.theme.colors.light };
-    border-radius: .6rem;
-    text-decoration: none;
-
-    &:hover,
-    &:focus {
-        background: ${ props => darken( 0.05, props.theme.colors.primary ) };
-    }
-`;
 
 const Teaser = ( { post } ) => {
     return (
-        <Article>            
+        <Article>
             <Image src={ post.featured_media.source_url } alt="Article image" />
             <Meta>
                 <Categories>
@@ -87,13 +84,13 @@ const Teaser = ( { post } ) => {
                     { post.date }
                 </Time>
             </Meta>
-            <Link to={ `/post/${ post.slug }` } style={ { textDecoration: 'none' } }>
+            <TitleLink to={ `/post/${ post.slug }` } style={ { textDecoration: 'none' } }>
                 <Title>{ post.title }</Title>
-            </Link>
+            </TitleLink>
             <Content dangerouslySetInnerHTML={ { __html: post.excerpt } } />
-            <ReadMore to={ `/post/${ post.slug }`}>Read more</ReadMore>
+            <ButtonPrimary as={ Link } to={ `/post/${ post.slug }`}>Read more</ButtonPrimary>
         </Article>
-    );
-};
+    )
+}
 
 export default Teaser;

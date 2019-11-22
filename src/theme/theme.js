@@ -38,12 +38,12 @@ const fonts = {
 /* Transitions */
 const transitions = {
     general: '0.25s ease-in-out 0s',
-    link: '0.3s ease-in-out 0s',
+    link: '0.15s ease-in-out 0s',
     navigation: '0.35s ease 0s'
 };
 
 export default {
     colors,
     fonts,
-    transitions
+    transitions,
 }
