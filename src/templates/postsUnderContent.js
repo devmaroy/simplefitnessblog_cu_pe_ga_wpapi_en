@@ -53,6 +53,7 @@ export const Query = graphql`
                     categories {
                         id
                         name
+                        slug
                     }
                     featured_media {
                         source_url

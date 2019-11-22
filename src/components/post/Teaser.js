@@ -25,9 +25,6 @@ const Meta = styled.div`
 `;
 
 const Categories = styled.span`
-    text-transform: uppercase;
-    color: ${ props => props.theme.colors.primary };
-
     &::after {
         content: "\u2022";
         font-size: 2rem;
@@ -35,6 +32,12 @@ const Categories = styled.span`
         vertical-align: middle;
         color: ${ props => props.theme.colors.secondary };
     }
+`;
+
+const Category = styled( Link )`
+    text-transform: uppercase;
+    text-decoration: none;
+    color: ${ props => props.theme.colors.primary };
 `;
 
 const Time = styled.time`
@@ -77,7 +80,11 @@ const Teaser = ( { post } ) => {
             <Meta>
                 <Categories>
                     { post.categories.map( ( category ) => (
-                        <span key={ category.id }>{ category.name }</span>
+                        <Category 
+                            key={ category.id } 
+                            to={ `/category/${ category.slug }` } 
+                            dangerouslySetInnerHTML={ { __html: category.name } } 
+                        />
                     )) }
                 </Categories>
                 <Time dateTime={ post.plainDate }>
