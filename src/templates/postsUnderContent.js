@@ -9,15 +9,19 @@ import Teaser from '../components/post/Teaser';
 const postsUnderContent = ( { data } ) => {
     const { page, posts } = data;
 
+    const PostsWrapper = styled.div`
+        margin-top: 10rem;
+    `;
+
     return (
         <Layout>
+            <Hero data={ page } />
             <Container>
-                <Hero data={ page } />
-                <div>
+                <PostsWrapper>
                     { posts.edges.map( ( { node } ) => (
                         <Teaser key={ node.id } post={ node } />
                     )) }
-                </div>
+                </PostsWrapper>
             </Container>
         </Layout>
     )
