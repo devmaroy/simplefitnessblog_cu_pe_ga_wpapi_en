@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
+import { darken } from 'polished';
 
 const Article = styled.article`
     &:not( :last-child ) {
@@ -65,6 +66,11 @@ const ReadMore = styled( Link )`
     color: ${ props => props.theme.colors.light };
     border-radius: .6rem;
     text-decoration: none;
+
+    &:hover,
+    &:focus {
+        background: ${ props => darken( 0.05, props.theme.colors.primary ) };
+    }
 `;
 
 const Teaser = ( { post } ) => {
