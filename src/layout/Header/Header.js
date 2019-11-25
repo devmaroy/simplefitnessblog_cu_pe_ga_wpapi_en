@@ -2,7 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import Container from '../base/Container';
 import SiteLogo from './SiteLogo';
-import Navigation from './Navigation';
+import Navigation from './navigation/Navigation';
+
+
+// Styles
 
 const HeaderWrapper = styled.header`
     display: flex;
@@ -14,7 +17,7 @@ const Header = () => {
     return (
         <Container>
             <HeaderWrapper>
-                <SiteLogo />
+                <SiteLogo />    
                 <Navigation />
             </HeaderWrapper>
         </Container>
