@@ -17,7 +17,7 @@ const Header = () => {
     return (
         <Container>
             <HeaderWrapper>
-                <SiteLogo />    
+                <SiteLogo width={ '20rem' } />    
                 <Navigation />
             </HeaderWrapper>
         </Container>

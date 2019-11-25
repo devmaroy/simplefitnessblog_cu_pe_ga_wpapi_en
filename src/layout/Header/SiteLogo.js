@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const Logo = styled.a`
 	img {
-		width: 20rem;
+		width: ${ props => props.width };
 	}
 `;
 
@@ -23,13 +23,15 @@ const query = graphql`
 `;
 
 
-const SiteLogo = () => {
+const SiteLogo = ( props ) => {
+	console.log( props );
 	return (
-		<StaticQuery query={ query } render={ ( props ) => (
+		<StaticQuery query={ query } render={ ( data ) => (
 			<div style={{ lineHeight: 0 }}>
-				<Logo href="/home">
+				{ console.log( props )}
+				<Logo href="/home" width={ props.width }>
 					<img 
-						src={ props.allWordpressWpLogo.edges[0].node.url.source_url } 
+						src={ data.allWordpressWpLogo.edges[0].node.url.source_url } 
 						alt="Site logo" 
 					/>	
 				</Logo>

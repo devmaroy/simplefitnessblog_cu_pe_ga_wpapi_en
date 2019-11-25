@@ -28,7 +28,7 @@ const Footer = () => {
         <FooterWrapper>
             <Container>
                 <FooterInfo>
-                    <SiteLogo />
+                    <SiteLogo width={ '15rem' } />
                     <Copyright>2019 All Rights Reserved.</Copyright>
                 </FooterInfo>
             </Container>
