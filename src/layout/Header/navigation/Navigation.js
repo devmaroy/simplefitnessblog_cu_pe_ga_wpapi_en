@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Menu from './Menu';
 import Social from './Social';
+import menuIcon from '../../../images/icons/menu.svg';
 
 
 // Styles
@@ -59,7 +60,7 @@ class Navigation extends Component {
         return (
             <div>
                 <MenuIcon onClick={ this.toggleMenu }>
-                    <img src="/ico/menu.svg" alt="Menu icon" />
+                    <img src={ menuIcon } alt="Menu icon" />
                 </MenuIcon>
     
                 <div>
