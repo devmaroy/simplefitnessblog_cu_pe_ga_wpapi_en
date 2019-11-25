@@ -34,7 +34,7 @@ export default postsUnderContent;
 // Query
 export const Query = graphql`
     query( $id: String! ) {
-        page: wordpressPage( id: { eq: $id }) {
+        page: wordpressPage( id: { eq: $id } ) {
             title
             content
             featured_media {

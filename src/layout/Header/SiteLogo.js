@@ -24,11 +24,9 @@ const query = graphql`
 
 
 const SiteLogo = ( props ) => {
-	console.log( props );
 	return (
 		<StaticQuery query={ query } render={ ( data ) => (
 			<div style={{ lineHeight: 0 }}>
-				{ console.log( props )}
 				<Logo href="/home" width={ props.width }>
 					<img 
 						src={ data.allWordpressWpLogo.edges[0].node.url.source_url } 
