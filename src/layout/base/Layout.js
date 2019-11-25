@@ -4,6 +4,14 @@ import { Normalize } from 'styled-normalize';
 import theme from '../../theme/theme';
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faCheckSquare, faCoffee  } from '@fortawesome/free-solid-svg-icons'
+
+
+// Create font awesome icon library
+library.add(fab, faCheckSquare, faCoffee)
+
 
 const GlobalStyles = createGlobalStyle`
     @import url('https://fonts.googleapis.com/css?family=Karla:400,400i,700,700i|Rubik:400,500,700,900&display=swap&subset=latin-ext');
