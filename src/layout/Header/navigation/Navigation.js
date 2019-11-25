@@ -1,5 +1,4 @@
-import React from 'react';
-import { Link } from 'gatsby';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import Menu from './Menu';
 import Social from './Social';
@@ -14,10 +13,6 @@ const MenuIcon = styled.button`
 `; 
 
 const NavigationWrapper = styled.div`
-
-`;
-
-const NavigationInner = styled.div`
     position: fixed;
 	top: 0;
 	right: 0;
@@ -26,11 +21,10 @@ const NavigationInner = styled.div`
 	height: 100%;
 	padding: 4rem;
 	background: ${ props => props.theme.colors.primary };
-	//transform: translateX( ${ props => props.showMenu ? '0rem' : '29rem'} );
+	transform: translateX( ${ props => props.showMenu ? '0rem' : '29rem'} );
 	
 	transition: transform .25s ease;
 `;
-
 
 const Overlay = styled.div`
     position: fixed;
@@ -38,31 +32,50 @@ const Overlay = styled.div`
 	left: 0;
 	height: 100%;
 	width: 100%;
-	//visibility: ${ props => props.showMenu ? 'visible' : 'hidden' };
-	//opacity: ${ props => props.showMenu ? '1' : '0' };
+	visibility: ${ props => props.showMenu ? 'visible' : 'hidden' };
+	opacity: ${ props => props.showMenu ? '1' : '0' };
 	background: ${ props => props.theme.colors.transparentBlack };
 
 	transition: opacity .25s ease, visibility 0s ease;
 `;
 
 
-const Navigation = () => {
-    return (
-        <div>
-            <MenuIcon>
-                <img src="/ico/menu.svg" alt="Menu icon" />
-            </MenuIcon>
+class Navigation extends Component {
+    constructor( props ) {
+        super( props );
 
-            <NavigationWrapper>
-                <NavigationInner>
-                    <Menu />
-                    <Social />
-                </NavigationInner>
+        this.state = {
+            showMenu: false
+        };
+    }
 
-                <Overlay />
-            </NavigationWrapper>
-        </div>
-    );
-};
+    toggleMenu = () => {
+        this.setState(( { showMenu } ) => ({
+            showMenu: ! showMenu
+        }));
+    }
+
+    render() {
+        return (
+            <div>
+                <MenuIcon onClick={ this.toggleMenu }>
+                    <img src="/ico/menu.svg" alt="Menu icon" />
+                </MenuIcon>
+    
+                <div>
+                    <NavigationWrapper showMenu={ this.state.showMenu }>
+                        <Menu />
+                        <Social />
+                    </NavigationWrapper>
+    
+                    <Overlay 
+                        onClick={ this.toggleMenu } 
+                        showMenu={ this.state.showMenu }
+                    />
+                </div>
+            </div>
+        );
+    }
+}
 
 export default Navigation;
