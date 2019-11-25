@@ -1,7 +1,30 @@
 import React from 'react';
 import styled from 'styled-components';
 import { transparentize } from 'polished';
-import { Link } from 'gatsby';
+import { Link, graphql, StaticQuery } from 'gatsby';
+
+
+// Query
+
+const query = graphql`
+{
+    allWordpressWpApiMenusMenusItems( filter:{
+      name: {
+        eq: "Main Menu"
+      }
+    }) {
+      edges {
+        node {
+          items {
+            title
+            object_slug
+          }
+        }
+      }
+    }
+  }
+`;
+
 
 
 // Styles
@@ -30,31 +53,25 @@ const NavigationLink = styled( Link )`
 
 const Menu = () => {
     return (
-        <nav>
-            <NavigationList>
-                <li>
-                    <NavigationLink to="/">Elements</NavigationLink>
-                </li>
-                <li>
-                    <NavigationLink to="/">Portfolio</NavigationLink>
-                </li>
-                <li>
-                    <NavigationLink to="/">Blog</NavigationLink>
-                </li>
-                <li>
-                    <NavigationLink to="/">Shop</NavigationLink>
-                </li>
-                <li>
-                    <NavigationLink to="/">What's New</NavigationLink>
-                </li>
-                <li>
-                    <NavigationLink to="/">Demos</NavigationLink>
-                </li>
-                <li>
-                    <NavigationLink to="/">Purchase</NavigationLink>
-                </li>
-            </NavigationList>
-        </nav>
+        <StaticQuery query={ query } render={ ( props ) => {
+            const menuItems = props.allWordpressWpApiMenusMenusItems.edges[0].node.items;
+
+            return (
+                <nav>
+                    <NavigationList>
+                        {
+                            menuItems.map( ( { title, object_slug } ) => (
+                                <li key={ object_slug }>
+                                    <NavigationLink to={ `/${ object_slug }` }>{ title }</NavigationLink>
+                                </li>
+                            ))
+                        }
+                    </NavigationList>
+                </nav>
+            )
+        }} />
+
+
     );
 };
 
