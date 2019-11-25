@@ -9,7 +9,7 @@ export const ButtonPrimary = styled.button`
     margin-top: 4rem;
     padding: 1.2rem 2rem;
     font-weight: ${ props => props.theme.fonts.weights.bold };
-    line-height: 1;
+    line-height: 1.2;
     border-radius: .6rem;
     color: ${ props => props.theme.colors.light };
     background: ${ props => props.theme.colors.primary };
