@@ -1,3 +1,7 @@
+require( "dotenv" ).config({
+  path: '.env'
+});
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -24,7 +28,6 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
     {
@@ -35,8 +38,9 @@ module.exports = {
          * Example : 'gatsbyjsexamplewordpress.wordpress.com' or 'www.example-site.com'
          */
         baseUrl: "wpa-simplefitnessblog.matejovic.dev.local",
+        baseUrl: process.env.API_URL,
         // The protocol. This can be http or https.
-        protocol: "http",
+        protocol: process.env.API_PROTOCOL,
         // Indicates whether the site is hosted on wordpress.com.
         // If false, then the assumption is made that the site is self hosted.
         // If true, then the plugin will source its content on wordpress.com using the JSON REST API V2.
@@ -116,7 +120,7 @@ module.exports = {
           "**/favicon",
         ],
         // Blacklisted routes using glob patterns
-        excludedRoutes: ["**/posts/1456"],
+        excludedRoutes: [],
         // Set this to keep media sizes.
         // This option is particularly useful in case you need access to
         // URLs for thumbnails, or any other media detail.
