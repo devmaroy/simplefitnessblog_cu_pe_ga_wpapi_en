@@ -35,15 +35,62 @@ const fonts = {
     }
 }
 
-/* Transitions */
+
+// Transitions
 const transitions = {
     general: '0.25s ease-in-out 0s',
     link: '0.15s ease-in-out 0s',
     navigation: '0.35s ease 0s'
 };
 
+
+// Elements
+const elements = {
+    bigQuote: {
+        content: `"\u201C"`,
+        fontWeight: 'bold',
+        fontSize: '8rem',
+        fontFamily: 'Georgia, serif',
+    },
+    mobile: {
+        headings: {
+            h1: {
+                fontSize: '4rem',
+                lineHeight: '4.8rem',
+            },
+            h2: {
+                fontSize: '3.3rem',
+                lineHeight: '4rem',
+            },
+            h3: {
+                fontSize: '2.8rem',
+                lineHeight: '3.4rem',
+            },
+            h4: {
+                fontSize: '2.3rem',
+                lineHeight: '2.8rem',
+            },
+            h5: {
+                fontSize: '1.9rem',
+                lineHeight: '2.3rem',
+            },
+            h6: {
+                fontSize: '1.6rem',
+                lineHeight: '1.9rem',
+            },
+        },
+        blockquote: {
+            fontSize: '2.2rem',
+            lineHeight: '3.6rem'
+        }
+    }
+}
+
+
+
 export default {
     colors,
     fonts,
     transitions,
+    elements,
 }

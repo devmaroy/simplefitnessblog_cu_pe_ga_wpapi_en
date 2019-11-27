@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { Normalize } from 'styled-normalize';
 import theme from '../../theme/theme';
+import '../../WordpressCoreStyles.css';
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -15,7 +16,8 @@ library.add(fab, faCheckSquare, faCoffee)
 
 const GlobalStyles = createGlobalStyle`
     @import url('https://fonts.googleapis.com/css?family=Karla:400,400i,700,700i|Rubik:400,500,700,900&display=swap&subset=latin-ext');
-
+    @import url('https://fonts.googleapis.com/css?family=Catamaran:700&display=swap');
+    
     html {
         font-size: 62.5%; 
         box-sizing: border-box;

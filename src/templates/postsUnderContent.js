@@ -6,12 +6,16 @@ import Container from '../layout/base/Container';
 import Hero from '../components/hero/Hero';
 import Teaser from '../components/post/Teaser';
 
+
+// Styles
+
+const PostsWrapper = styled.div`
+    margin-top: 8rem;
+`;
+
+
 const postsUnderContent = ( { data } ) => {
     const { page, posts } = data;
-
-    const PostsWrapper = styled.div`
-        margin-top: 10rem;
-    `;
 
     return (
         <Layout>
@@ -19,7 +23,7 @@ const postsUnderContent = ( { data } ) => {
             <Container>
                 <PostsWrapper>
                     { posts.edges.map( ( { node } ) => (
-                        <Teaser key={ node.id } post={ node } />
+                        <Teaser key={ node.id } post={ node } isTeaser={ true } />
                     )) }
                 </PostsWrapper>
             </Container>

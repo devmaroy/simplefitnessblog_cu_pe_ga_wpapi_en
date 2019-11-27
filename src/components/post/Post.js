@@ -7,21 +7,21 @@ import {
     Categories,
     Category, 
     Time,
-    Title, 
+    TitleLarge, 
     TitleLink,
     Content 
 } from './Article'; 
-import { ButtonPrimary } from '../elements/Button';
 
 
-const Teaser = ( { post } ) => {
+const Post = ( { post } ) => {
+    console.log( post )
     return (
         <ArticleWrapper>
-            <Link to={ `/post/${ post.slug }` }>
-                <Image src={ post.featured_media.source_url } alt="Article image" />
-            </Link>
+            <TitleLink to={ `/post/${ post.slug }` }>
+                <TitleLarge dangerouslySetInnerHTML={ { __html: post.title } } />
+            </TitleLink>
 
-            <Meta>
+            <Meta isPost={ true }>
                 <Categories>
                     {
                         post.categories.map( ( category ) => (
@@ -39,15 +39,13 @@ const Teaser = ( { post } ) => {
                 </Time>
             </Meta>
 
-            <TitleLink to={ `/post/${ post.slug }` }>
-                <Title dangerouslySetInnerHTML={ { __html: post.title } } />
-            </TitleLink>
+            <Link to={ `/post/${ post.slug }` }>
+                <Image src={ post.featured_media.source_url } alt="Article image" isPost={ true } />
+            </Link>
 
-            <Content dangerouslySetInnerHTML={ { __html: post.excerpt } } />
-
-            <ButtonPrimary as={ Link } to={ `/post/${ post.slug }`}>Read more</ButtonPrimary>
+            <Content dangerouslySetInnerHTML={ { __html: post.content } } />
         </ArticleWrapper>
     );
 };
 
-export default Teaser;
+export default Post;
