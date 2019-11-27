@@ -6,6 +6,7 @@ const colors = {
     dark: '#403c3d',
     gray: '#797475',
     lightGray: '#adadad',
+    veryLightGray: '#cac9c9',
     background: '#FFF',
     transparentBlack: 'rgba( 0, 0, 0, .5 )',
     overlayLinearGradient: 'linear-gradient( rgba( 0, 0, 0, 0.5 ), rgba( 0, 0, 0, 0.5 ) )',

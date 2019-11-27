@@ -12,7 +12,13 @@ import {
     Content,
     Tags,
     Tag,
+    SocialShare,
+    SocialShareHeading,
+    SocialShareList,
+    SocialShareListItem,
+    SocialShareLink,
 } from './Article'; 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 
 const Post = ( { post } ) => {
@@ -60,8 +66,42 @@ const Post = ( { post } ) => {
                     ))
                 }
             </Tags>
+
+            { /* Todo */ }
+            <SocialShare>
+                <SocialShareHeading>Share this article</SocialShareHeading>
+                <SocialShareList>
+                    <SocialShareListItem>
+                        <SocialShareLink to="/">
+                            <FontAwesomeIcon 
+                                icon={["fab", "twitter"]}
+                                fixedWidth 
+                            />
+                        </SocialShareLink>
+                    </SocialShareListItem>
+                    <SocialShareListItem>
+                        <SocialShareLink to="/">
+                            <FontAwesomeIcon 
+                                icon={["fab", "facebook-f"]}
+                                fixedWidth 
+                            />
+                        </SocialShareLink>
+                    </SocialShareListItem>
+                    <SocialShareListItem>
+                        <SocialShareLink to="/">
+                            <FontAwesomeIcon 
+                                icon={["fab", "instagram"]}
+                                fixedWidth 
+                            />
+                        </SocialShareLink>
+                    </SocialShareListItem>
+                </SocialShareList> 
+            </SocialShare>
         </ArticleWrapper>
     );
 };
+
+
+
 
 export default Post;

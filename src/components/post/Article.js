@@ -213,3 +213,35 @@ export const Tag = styled( ButtonSecondary )`
         margin-right: 1rem;
     }
 `;
+
+
+export const SocialShare = styled.div`
+    margin-top: 4rem;
+    display: flex;
+`;
+
+export const SocialShareHeading = styled.h5`
+    font-family: ${ props => props.theme.fonts.secondary };
+    ${ props => props.theme.elements.mobile.headings.h5 };
+    font-weight: ${ props => props.theme.fonts.weights.medium };
+    color: ${ props => props.theme.colors.veryLightGray };
+    margin: 0;
+`;
+
+export const SocialShareList = styled.ul`
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0 4rem;
+`;
+
+export const SocialShareListItem = styled.li`
+    display: inline-block;
+    
+    &:not( :last-child ){
+        margin-right: 1rem;
+    }
+`;
+
+export const SocialShareLink = styled( Link )`
+    color: ${ props => props.theme.colors.dark };
+`;
