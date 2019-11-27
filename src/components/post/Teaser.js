@@ -9,10 +9,9 @@ import {
     Time,
     Title, 
     TitleLink,
-    Content 
+    Content,
+    ReadMore, 
 } from './Article'; 
-import { ButtonPrimary } from '../elements/Button';
-
 
 const Teaser = ( { post } ) => {
     return (
@@ -45,7 +44,13 @@ const Teaser = ( { post } ) => {
 
             <Content dangerouslySetInnerHTML={ { __html: post.excerpt } } />
 
-            <ButtonPrimary as={ Link } to={ `/post/${ post.slug }`}>Read more</ButtonPrimary>
+            <ReadMore
+                as={ Link } 
+                to={ `/post/${ post.slug }` }
+                shadow
+            >   
+                Read more
+            </ReadMore>
         </ArticleWrapper>
     );
 };

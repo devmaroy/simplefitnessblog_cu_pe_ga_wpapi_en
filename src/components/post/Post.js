@@ -52,6 +52,8 @@ const Post = ( { post } ) => {
                     post.tags.map( ( tag ) => (
                         <Tag
                             key={ tag.id }
+                            as={ Link } 
+                            sm
                             to={ `/tag/${ tag.slug }` } 
                             dangerouslySetInnerHTML={ { __html: tag.name } }
                         />

@@ -1,7 +1,7 @@
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { darken, lighten } from 'polished';
-import { ButtonPrimary } from '../elements/Button';
+import { ButtonPrimary, ButtonSecondary } from '../elements/Button';
 
 
 // Styles
@@ -190,11 +190,25 @@ export const Content = styled.div`
     }
 `;
 
-export const Tags = styled.div`
 
+export const ReadMore = styled( ButtonPrimary )`
+    margin-top: 4rem;
 `;
 
-export const Tag = styled( ButtonPrimary )`
+export const Tags = styled.div`
+    margin-top: 6rem;
+    background-image: linear-gradient(
+        to right, ${ props => lighten( 0.45, props.theme.colors.gray ) } 61%, 
+        rgba(255, 255, 255, 0) 0%
+    );
+    background-position: top;
+    background-size: 1.7rem .2rem;
+    background-repeat: repeat-x;
+`;
+
+export const Tag = styled( ButtonSecondary )`
+    margin-top: 4rem;
+
     &:not( :last-child ) {
         margin-right: 1rem;
     }
