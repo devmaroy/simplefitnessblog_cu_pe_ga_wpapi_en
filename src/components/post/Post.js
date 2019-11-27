@@ -9,7 +9,9 @@ import {
     Time,
     TitleLarge, 
     TitleLink,
-    Content 
+    Content,
+    Tags,
+    Tag,
 } from './Article'; 
 
 
@@ -44,6 +46,18 @@ const Post = ( { post } ) => {
             </Link>
 
             <Content dangerouslySetInnerHTML={ { __html: post.content } } />
+
+            <Tags>
+                {
+                    post.tags.map( ( tag ) => (
+                        <Tag
+                            key={ tag.id }
+                            to={ `/tag/${ tag.slug }` } 
+                            dangerouslySetInnerHTML={ { __html: tag.name } }
+                        />
+                    ))
+                }
+            </Tags>
         </ArticleWrapper>
     );
 };

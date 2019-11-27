@@ -49,6 +49,11 @@ export const Query = graphql`
                 name
                 slug
             }
+            tags {
+                id
+                name
+                slug
+            }
             featured_media {
                 source_url
             }

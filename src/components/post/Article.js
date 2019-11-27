@@ -1,6 +1,7 @@
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { darken, lighten } from 'polished';
+import { ButtonPrimary } from '../elements/Button';
 
 
 // Styles
@@ -186,5 +187,15 @@ export const Content = styled.div`
         p {
             display: inline;
         }
+    }
+`;
+
+export const Tags = styled.div`
+
+`;
+
+export const Tag = styled( ButtonPrimary )`
+    &:not( :last-child ) {
+        margin-right: 1rem;
     }
 `;
