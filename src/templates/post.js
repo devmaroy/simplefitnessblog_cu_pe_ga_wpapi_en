@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Layout from '../layout/base/Layout';
 import Container from '../layout/base/Container';
 import Post from '../components/post/Post';
-
+import { DiscussionEmbed } from 'disqus-react';
 
 // Styles
 
@@ -15,11 +15,17 @@ const PostWrapper = styled.div`
 const post = ( { data } ) => {
     const { post } = data;
 
+    const disqusConfig = {
+        shortname: process.env.GATSBY_DISQUS_NAME,
+        config: { identifier: post.slug, title: post.title },
+    }
+
     return (
         <Layout>
             <Container>
                 <PostWrapper>
                     <Post post={ post } />
+                    <DiscussionEmbed {...disqusConfig} />
                 </PostWrapper>
             </Container>      
         </Layout>
