@@ -14,6 +14,7 @@ import {
 } from './Article'; 
 
 const Teaser = ( { post } ) => {
+    console.log( post );
     return (
         <ArticleWrapper>
             <Link to={ `/post/${ post.slug }` }>
@@ -47,7 +48,7 @@ const Teaser = ( { post } ) => {
             <ReadMore
                 as={ Link } 
                 to={ `/post/${ post.slug }` }
-                shadow
+                shadow={ true }
             >   
                 Read more
             </ReadMore>

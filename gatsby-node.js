@@ -40,6 +40,15 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      allWordpressCategory {
+        edges {
+          node {
+            id
+            name
+            slug
+          }
+        }
+      }
     }
   `)
 
@@ -49,7 +58,7 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   // Access query results via object destructuring
-  const { allWordpressPage, allWordpressPost } = result.data
+  const { allWordpressPage, allWordpressPost, allWordpressCategory } = result.data
 
   // Create Page pages.
   const pageTemplate = path.resolve(`./src/templates/page.js`)
@@ -86,6 +95,21 @@ exports.createPages = async ({ graphql, actions }) => {
       component: slash(postTemplate),
       context: {
         id: edge.node.id,
+      },
+    })
+  })
+
+
+  const categoryTemplate = path.resolve(`./src/templates/category.js`);
+
+  // Create pages for categories
+  allWordpressCategory.edges.forEach( edge => {
+    createPage({
+      path: `/category/${ edge.node.slug }`,
+      component: slash(categoryTemplate),
+      context: {
+        id: edge.node.id,
+        name: edge.node.name,
       },
     })
   })
