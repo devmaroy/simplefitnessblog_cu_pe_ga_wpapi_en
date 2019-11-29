@@ -13,7 +13,7 @@ import {
     ReadMore, 
 } from './Article'; 
 
-const Teaser = ( { post } ) => {
+const Preview = ( { post } ) => {
     console.log( post );
     return (
         <ArticleWrapper>
@@ -56,4 +56,4 @@ const Teaser = ( { post } ) => {
     );
 };
 
-export default Teaser;
+export default Preview;

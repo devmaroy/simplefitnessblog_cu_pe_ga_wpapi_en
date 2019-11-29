@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Layout from '../layout/base/Layout';
 import Container from '../layout/base/Container';
 //import ArticlePreview from '../components/post/ArticlePreview';
-import Teaser from '../components/post/Teaser';
+import Preview from '../components/post/Preview';
 
 
 // Styles
@@ -44,7 +44,7 @@ const TaxonomyBase = ( props ) => {
                 <TaxonomiesContent>
                     {
                         content.map( ( { node } ) => (
-                            <Teaser key={ node.id } post={ node } isTeaser={ true } />
+                            <Preview key={ node.id } post={ node } isTeaser={ true } />
                         ))
                     }
                 </TaxonomiesContent>

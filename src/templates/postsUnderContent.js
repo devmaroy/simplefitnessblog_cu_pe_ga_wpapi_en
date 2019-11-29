@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import Layout from '../layout/base/Layout';
@@ -66,4 +66,4 @@ export const Query = graphql`
             }
         }
     }    
-`;
+`;*/
