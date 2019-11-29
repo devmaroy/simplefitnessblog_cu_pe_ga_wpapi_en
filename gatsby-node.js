@@ -9,7 +9,7 @@ const slash = require(`slash`)
 // Will create pages for WordPress posts (route : /post/{slug})
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage, createRedirect } = actions
-  createRedirect( { fromPath: '/', toPath: '/home', redirectInBrowser: true, isPermanent: true } )
+  createRedirect( { fromPath: '/', toPath: '/blog', redirectInBrowser: true, isPermanent: true } )
 
   // The “graphql” function allows us to run arbitrary
   // queries against the local Gatsby GraphQL schema. Think of
@@ -77,7 +77,7 @@ exports.createPages = async ({ graphql, actions }) => {
       // optional but is often necessary so the template
       // can query data specific to each page.
       path: `${ edge.node.slug }`,
-      component: slash( edge.node.template === 'posts_under_content.php' ? postsUnderContentTemlate : pageTemplate),
+      component: slash(pageTemplate),
       context: {
         id: edge.node.id,
       },
@@ -96,6 +96,24 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         id: edge.node.id,
       },
+    })
+  })
+
+  const blogList = path.resolve(`./src/templates/blogList.js`)
+  const posts = allWordpressPost.edges
+  const postsPerPage = 2
+  const numPages = Math.ceil( posts.length / postsPerPage )
+
+  Array.from( { length: numPages } ).map( ( _, i ) => {
+    createPage({
+      path: i === 0 ? `/blog` : `/blog/${ i + 1}`,
+      component: slash(blogList),
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        numPages,
+        currentPage: i + 1
+      }
     })
   })
 
