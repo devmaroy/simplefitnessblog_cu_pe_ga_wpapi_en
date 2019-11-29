@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../layout/base/Layout';
 import Container from '../layout/base/Container';
+import Preview from '../components/post/Preview';
 
 
 const blogList = ( { data } ) => {
@@ -13,9 +14,7 @@ const blogList = ( { data } ) => {
                 <div>
                     {
                         posts.map( ( { node } ) => (
-                            <div key={ node.id }>
-                                <h3>{ node.title }</h3>
-                            </div>
+                            <Preview key={ node.id } post={ node } />
                         ))
                     }
                 </div>

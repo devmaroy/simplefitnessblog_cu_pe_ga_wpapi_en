@@ -29,7 +29,7 @@ export const ButtonPrimary = styled( Button )`
     color: ${ props => props.theme.colors.light };
     background: ${ props => props.theme.colors.primary };
     
-    ${ props => props.shadow && `
+    ${ props => props.styled.shadow && `
         box-shadow: 0 .5rem 1rem -.4rem ${ props.theme.colors.primary };
     `}
     

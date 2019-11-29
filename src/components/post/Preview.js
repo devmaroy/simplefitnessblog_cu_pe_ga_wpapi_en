@@ -48,7 +48,7 @@ const Preview = ( { post } ) => {
             <ReadMore
                 as={ Link } 
                 to={ `/post/${ post.slug }` }
-                shadow={ true }
+                styled={{ shadow: true }}
             >   
                 Read more
             </ReadMore>
