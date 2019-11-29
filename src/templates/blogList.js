@@ -1,29 +1,36 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import styled from 'styled-components';
 import Layout from '../layout/base/Layout';
 import Container from '../layout/base/Container';
 import Preview from '../components/post/Preview';
 
 
-const blogList = ( { data } ) => {
+// Styles
+
+const BlogListWrapper = styled.div`
+    margin-top: 8rem;
+`;
+
+const BlogList = ( { data } ) => {
     const posts = data.allWordpressPost.edges;
 
     return (
         <Layout>
             <Container>
-                <div>
+                <BlogListWrapper>
                     {
                         posts.map( ( { node } ) => (
                             <Preview key={ node.id } post={ node } />
                         ))
                     }
-                </div>
+                </BlogListWrapper>
             </Container>
         </Layout>
     );
 };
 
-export default blogList;
+export default BlogList;
 
 
 // Template Query
