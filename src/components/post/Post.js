@@ -59,7 +59,7 @@ const Post = ( { post } ) => {
                         <Tag
                             key={ tag.id }
                             as={ Link } 
-                            sm
+                            styled={ { sm: true } }
                             to={ `/tag/${ tag.slug }` } 
                             dangerouslySetInnerHTML={ { __html: tag.name } }
                         />

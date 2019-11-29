@@ -15,7 +15,7 @@ const Button = styled.button`
     border-radius: .6rem;
     cursor: pointer;
 
-    ${ props => props.sm &&
+    ${ props => props.styled.sm &&
         'padding: 1rem 1.8rem; font-size: 1.4rem;'
     }
 
