@@ -18,7 +18,7 @@ import {
     SocialShareListItem,
     SocialShareLink,
 } from './Article'; 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 const Post = ( { post } ) => {

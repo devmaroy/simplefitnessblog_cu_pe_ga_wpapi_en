@@ -7,11 +7,11 @@ import Header from '../header/Header';
 import Footer from '../footer/Footer';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faCheckSquare, faCoffee  } from '@fortawesome/free-solid-svg-icons'
+import { faGreaterThan, faLessThan  } from '@fortawesome/free-solid-svg-icons'
 
 
 // Create font awesome icon library
-library.add(fab, faCheckSquare, faCoffee)
+library.add(fab, faGreaterThan, faLessThan)
 
 
 const GlobalStyles = createGlobalStyle`

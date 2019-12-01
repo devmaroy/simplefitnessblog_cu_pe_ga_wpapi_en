@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Layout from '../layout/base/Layout';
 import Container from '../layout/base/Container';
 import Preview from '../components/post/Preview';
+import Pagination from '../components/base/Pagination';
 
 
 // Styles
@@ -26,7 +27,7 @@ const BlogList = ( { data, pageContext } ) => {
                         ))
                     }
                 </BlogListWrapper>
-                <Pagination numPages={ numPages } currentPage={ currentPage } prefix="blog" />
+                <Pagination numberOfPages={ numPages } currentPage={ currentPage } prefix="blog" />
             </Container>
         </Layout>
     );
