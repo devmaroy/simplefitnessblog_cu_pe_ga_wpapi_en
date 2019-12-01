@@ -27,7 +27,7 @@ const SiteLogo = ( props ) => {
 	return (
 		<StaticQuery query={ query } render={ ( data ) => (
 			<div style={{ lineHeight: 0 }}>
-				<Logo href="/home" width={ props.width }>
+				<Logo href="/blog" width={ props.width }>
 					<img 
 						src={ data.allWordpressWpLogo.edges[0].node.url.source_url } 
 						alt="Site logo" 
