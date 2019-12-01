@@ -101,7 +101,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const blogList = path.resolve(`./src/templates/blogList.js`)
   const posts = allWordpressPost.edges
-  const postsPerPage = 2
+  const postsPerPage = 6
   const numPages = Math.ceil( posts.length / postsPerPage )
 
   Array.from( { length: numPages } ).map( ( _, i ) => {
