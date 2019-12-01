@@ -14,7 +14,7 @@ import {
 } from './Article'; 
 
 const Preview = ( { post } ) => {
-    console.log( post );
+   // console.log( post );
     return (
         <ArticleWrapper>
             <Link to={ `/post/${ post.slug }` }>

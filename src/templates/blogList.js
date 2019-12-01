@@ -12,8 +12,9 @@ const BlogListWrapper = styled.div`
     margin-top: 8rem;
 `;
 
-const BlogList = ( { data } ) => {
+const BlogList = ( { data, pageContext } ) => {
     const posts = data.allWordpressPost.edges;
+    const { currentPage, numPages } = pageContext;
 
     return (
         <Layout>
@@ -25,6 +26,7 @@ const BlogList = ( { data } ) => {
                         ))
                     }
                 </BlogListWrapper>
+                <Pagination numPages={ numPages } currentPage={ currentPage } prefix="blog" />
             </Container>
         </Layout>
     );
