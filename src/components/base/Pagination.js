@@ -3,7 +3,8 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { darken } from 'polished';
 
-// Styled
+
+// Styles
 
 const PaginationList = styled.ul`
     margin: 0;
@@ -13,12 +14,14 @@ const PaginationList = styled.ul`
     text-align: center;
 `;
 
+
 const PaginationItem = styled.li`
     display: inline-block;
     margin-right: .5rem;
     text-align: center;
     line-height: 1.5;
 `;
+
 
 const PaginationLink = styled( Link )`
     display: inline-block;
@@ -37,6 +40,9 @@ const PaginationLink = styled( Link )`
         background: ${ props => darken( 0.05, props.theme.colors.secondary ) };
     }
 `;
+
+
+// Default props 
 
 PaginationLink.defaultProps = {
     styled: {
@@ -88,10 +94,5 @@ const Pagination = ( { numberOfPages, currentPage, prefix } ) => {
     );
 };
 
+
 export default Pagination;
-
-
-
-
-
-

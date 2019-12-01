@@ -22,7 +22,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 const Post = ( { post } ) => {
-    console.log( post )
     return (
         <ArticleWrapper>
             <TitleLink to={ `/post/${ post.slug }` }>
@@ -100,8 +99,6 @@ const Post = ( { post } ) => {
         </ArticleWrapper>
     );
 };
-
-
 
 
 export default Post;

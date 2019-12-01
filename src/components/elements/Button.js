@@ -18,9 +18,7 @@ const Button = styled.button`
     ${ props => props.styled.sm &&
         'padding: 1rem 1.8rem; font-size: 1.4rem;'
     }
-
-    //box-shadow: 0 .5rem 1rem -.4rem ${ props => props.theme.colors.primary };
-
+    
     transition: ${ props => props.theme.transitions.link };
 `;
 

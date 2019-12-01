@@ -12,10 +12,12 @@ const SocialList = styled.ul`
 	list-style: none; 
 `;
 
+
 const SocialListItem = styled.li`
     display: inline-block;
     margin-right: 2rem;
 `;
+
 
 const SocialLink = styled.a`
     color: ${ props => transparentize( 0.2, props.theme.colors.light ) };
@@ -31,6 +33,7 @@ const SocialLink = styled.a`
         font-size: 2rem;
     }
 `;
+
 
 const Social = () => {
     return (
@@ -62,5 +65,6 @@ const Social = () => {
         </SocialList>
     );
 };
+
 
 export default Social;

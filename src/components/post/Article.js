@@ -12,6 +12,7 @@ export const ArticleWrapper = styled.article`
     }
 `;
 
+
 export const Image = styled.img`
     border-radius: .6rem;
 
@@ -27,6 +28,7 @@ export const Image = styled.img`
     }
 `;
 
+
 export const Meta = styled.div`
     font-family: ${ props => props.theme.fonts.primary };
     font-size: ${ props => props.theme.fonts.sizes.smaller };
@@ -38,6 +40,7 @@ export const Meta = styled.div`
     `}
 `;
 
+
 export const Categories = styled.span`
     &::after {
         content: "\u2022";
@@ -48,15 +51,18 @@ export const Categories = styled.span`
     }
 `;
 
+
 export const Category = styled( Link )`
     text-transform: uppercase;
     text-decoration: none;
     color: ${ props => props.theme.colors.primary };
 `;
 
+
 export const Time = styled.time`
     color: ${ props => props.theme.colors.lightGray };
 `;
+
 
 export const TitleLink = styled( Link )`
     text-decoration: none;
@@ -70,12 +76,14 @@ export const TitleLink = styled( Link )`
     }
 `;
 
+
 export const Title = styled.h3`
     font-family: ${ props => props.theme.fonts.secondary };
     ${ props => props.theme.elements.mobile.headings.h3 };
     font-weight: ${ props => props.theme.fonts.weights.bold };
     margin: 3rem 0;
 `;
+
 
 export const TitleLarge = styled.h2`
     font-family: ${ props => props.theme.fonts.secondary };
@@ -84,6 +92,7 @@ export const TitleLarge = styled.h2`
     margin: 0;
     text-align: center;
 `;
+
 
 export const Content = styled.div`
     font-size: ${ props => props.theme.fonts.sizes.normal };
@@ -195,6 +204,7 @@ export const ReadMore = styled( ButtonPrimary )`
     margin-top: 4rem;
 `;
 
+
 export const Tags = styled.div`
     margin-top: 6rem;
     background-image: linear-gradient(
@@ -205,6 +215,7 @@ export const Tags = styled.div`
     background-size: 1.7rem .2rem;
     background-repeat: repeat-x;
 `;
+
 
 export const Tag = styled( ButtonSecondary )`
     margin-top: 4rem;
@@ -220,6 +231,7 @@ export const SocialShare = styled.div`
     display: flex;
 `;
 
+
 export const SocialShareHeading = styled.h5`
     font-family: ${ props => props.theme.fonts.secondary };
     ${ props => props.theme.elements.mobile.headings.h5 };
@@ -228,11 +240,13 @@ export const SocialShareHeading = styled.h5`
     margin: 0;
 `;
 
+
 export const SocialShareList = styled.ul`
     list-style: none;
     padding: 0;
     margin: 0 0 0 4rem;
 `;
+
 
 export const SocialShareListItem = styled.li`
     display: inline-block;
@@ -241,6 +255,7 @@ export const SocialShareListItem = styled.li`
         margin-right: 1rem;
     }
 `;
+
 
 export const SocialShareLink = styled( Link )`
     color: ${ props => props.theme.colors.dark };

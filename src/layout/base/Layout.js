@@ -36,6 +36,7 @@ const GlobalStyles = createGlobalStyle`
     }
 `;
 
+
 const Layout = ( { children }) => {
     return (
         <ThemeProvider theme={ theme }>
@@ -49,5 +50,6 @@ const Layout = ( { children }) => {
         </ThemeProvider>
     );
 };
+
 
 export default Layout;

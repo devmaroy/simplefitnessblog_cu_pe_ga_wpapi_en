@@ -13,6 +13,7 @@ const MenuIcon = styled.button`
 	cursor: pointer;
 `; 
 
+
 const NavigationWrapper = styled.div`
     position: fixed;
 	top: 0;
@@ -26,6 +27,7 @@ const NavigationWrapper = styled.div`
 	
 	transition: transform .25s ease;
 `;
+
 
 const Overlay = styled.div`
     position: fixed;
@@ -78,5 +80,6 @@ class Navigation extends Component {
         );
     }
 }
+
 
 export default Navigation;

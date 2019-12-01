@@ -13,6 +13,7 @@ const HeaderWrapper = styled.header`
     margin: 3rem 0;
 `;
 
+
 const Header = () => {
     return (
         <Container>
@@ -23,5 +24,6 @@ const Header = () => {
         </Container>
     );
 };
+
 
 export default Header;

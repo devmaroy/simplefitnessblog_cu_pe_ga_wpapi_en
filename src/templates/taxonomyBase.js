@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import Layout from '../layout/base/Layout';
 import Container from '../layout/base/Container';
-//import ArticlePreview from '../components/post/ArticlePreview';
 import Preview from '../components/post/Preview';
 
 
@@ -11,6 +10,7 @@ import Preview from '../components/post/Preview';
 const TaxonomiesWrapper = styled.div`
     margin-top: 8rem;
 `;
+
 
 const TaxonomiesInfo = styled.p`
     font-family: ${ props => props.theme.fonts.secondary };
@@ -21,6 +21,7 @@ const TaxonomiesInfo = styled.p`
         font-weight: ${ props => props.theme.fonts.weights.medium };
     }
 `;
+
 
 const TaxonomiesContent = styled.div`
    margin-top: 8rem;

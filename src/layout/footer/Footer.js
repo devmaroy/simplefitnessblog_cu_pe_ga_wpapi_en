@@ -3,16 +3,21 @@ import styled from 'styled-components';
 import Container from '../base/Container';
 import SiteLogo from '../header/SiteLogo';
 
+
+// Styles
+
 const FooterWrapper = styled.footer`
     margin-top: 8rem;
     margin-bottom: 2rem;
 `;
+
 
 const FooterInfo = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
 `;
+
 
 const Copyright = styled.p`
     margin: 0;
@@ -22,6 +27,7 @@ const Copyright = styled.p`
         content: '\u00A9 ';
     }
 `;
+
 
 const Footer = () => {
     return (
@@ -35,5 +41,6 @@ const Footer = () => {
         </FooterWrapper>
     );
 };
+
 
 export default Footer;

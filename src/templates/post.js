@@ -6,11 +6,13 @@ import Container from '../layout/base/Container';
 import Post from '../components/post/Post';
 import { DiscussionEmbed } from 'disqus-react';
 
+
 // Styles
 
 const PostWrapper = styled.div`
     margin-top: 8rem;
 `;
+
 
 const post = ( { data } ) => {
     const { post } = data;
@@ -31,6 +33,7 @@ const post = ( { data } ) => {
         </Layout>
     );
 };
+
 
 export default post;
 

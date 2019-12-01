@@ -35,6 +35,7 @@ const NavigationList = styled.ul`
 	list-style: none;
 `;
 
+
 const NavigationLink = styled( Link )`
     display: inline-block;
     text-decoration: none;
@@ -74,5 +75,6 @@ const Menu = () => {
 
     );
 };
+
 
 export default Menu;

@@ -13,8 +13,8 @@ import {
     ReadMore, 
 } from './Article'; 
 
+
 const Preview = ( { post } ) => {
-   // console.log( post );
     return (
         <ArticleWrapper>
             <Link to={ `/post/${ post.slug }` }>
@@ -55,5 +55,6 @@ const Preview = ( { post } ) => {
         </ArticleWrapper>
     );
 };
+
 
 export default Preview;

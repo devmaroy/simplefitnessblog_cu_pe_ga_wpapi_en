@@ -13,6 +13,7 @@ const BlogListWrapper = styled.div`
     margin-top: 8rem;
 `;
 
+
 const BlogList = ( { data, pageContext } ) => {
     const posts = data.allWordpressPost.edges;
     const { currentPage, numPages } = pageContext;
@@ -34,6 +35,7 @@ const BlogList = ( { data, pageContext } ) => {
 };
 
 export default BlogList;
+
 
 
 // Template Query
