@@ -1,26 +1,39 @@
 import React from 'react';
-import Layout from '../layout/base/Layout';
 import { graphql } from 'gatsby';
+import styled from 'styled-components';
+import Layout from '../layout/base/Layout';
+import Container from '../layout/base/Container';
+//import Page from '../components/page/Page';
 
-const page = ( { data } ) => {
+const PostWrapper = styled.div`
+    margin-top: 8rem;
+`;
+
+const Page = ( { data } ) => {
+    const { page } = data;
+
     return (
         <Layout>
-            <div>
-                <h1>{ data.page.title }</h1>
-                <div dangerouslySetInnerHTML={ { __html: data.page.content } } />
-            </div>
+            <Container>
+                <PostWrapper>
+                    { /* <Page page={ page } /> */}
+                    { console.log( data ) }
+                </PostWrapper>
+            </Container>
         </Layout>
     );
 };
 
-export default page;
+export default Page;
 
 
 // Query
 export const PageQuery = graphql`
     query( $id: String! ) {
         page: wordpressPage( id: { eq: $id } ) {
+            id
             title
+            slug
             content
         }
     }
