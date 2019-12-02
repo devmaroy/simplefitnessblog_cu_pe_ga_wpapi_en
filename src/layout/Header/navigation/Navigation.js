@@ -65,17 +65,15 @@ class Navigation extends Component {
                     <img src={ menuIcon } alt="Menu icon" />
                 </MenuIcon>
     
-                <div>
-                    <NavigationWrapper showMenu={ this.state.showMenu }>
-                        <Menu />
-                        <Social />
-                    </NavigationWrapper>
-    
-                    <Overlay 
-                        onClick={ this.toggleMenu } 
-                        showMenu={ this.state.showMenu }
-                    />
-                </div>
+                <NavigationWrapper showMenu={ this.state.showMenu }>
+                    <Menu />
+                    <Social />
+                </NavigationWrapper>
+
+                <Overlay 
+                    onClick={ this.toggleMenu } 
+                    showMenu={ this.state.showMenu }
+                />
             </div>
         );
     }

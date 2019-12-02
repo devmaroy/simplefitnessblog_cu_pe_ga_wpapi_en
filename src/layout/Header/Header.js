@@ -7,7 +7,7 @@ import Navigation from './navigation/Navigation';
 
 // Styles
 
-const HeaderWrapper = styled.header`
+const HeaderContent = styled.div`
     display: flex;
     justify-content: space-between;
     margin: 3rem 0;
@@ -16,14 +16,16 @@ const HeaderWrapper = styled.header`
 
 const Header = () => {
     return (
-        <Container>
-            <HeaderWrapper>
-                <SiteLogo width={ '20rem' } />    
-                <Navigation />
-            </HeaderWrapper>
-        </Container>
-    );
-};
+        <header>
+            <Container>
+                <HeaderContent>
+                    <SiteLogo width={ '20rem' } />
+                    <Navigation />    
+                </HeaderContent>
+            </Container>
+        </header>
+    )
+}
 
 
 export default Header;

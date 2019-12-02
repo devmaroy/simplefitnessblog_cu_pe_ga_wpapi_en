@@ -35,7 +35,7 @@ const Footer = () => {
             <Container>
                 <FooterInfo>
                     <SiteLogo width={ '15rem' } />
-                    <Copyright>2019 All Rights Reserved.</Copyright>
+                    <Copyright>{ new Date().getFullYear() } All Rights Reserved.</Copyright>
                 </FooterInfo>
             </Container>
         </FooterWrapper>
