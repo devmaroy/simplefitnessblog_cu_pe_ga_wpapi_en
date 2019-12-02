@@ -3,28 +3,32 @@ import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import Layout from '../layout/base/Layout';
 import Container from '../layout/base/Container';
-//import Page from '../components/page/Page';
+import Page from '../components/page/Page';
+
+
+// Styles
 
 const PostWrapper = styled.div`
     margin-top: 8rem;
 `;
 
-const Page = ( { data } ) => {
+
+const PageTemplate = ( { data } ) => {
     const { page } = data;
 
     return (
         <Layout>
             <Container>
                 <PostWrapper>
-                    { /* <Page page={ page } /> */}
-                    { console.log( data ) }
+                    <Page page={ page } />
                 </PostWrapper>
             </Container>
         </Layout>
     );
 };
 
-export default Page;
+
+export default PageTemplate;
 
 
 // Query

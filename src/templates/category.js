@@ -1,9 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import TaxonomyBase from './taxonomyBase';
+import TaxonomyBaseTemplate from './TaxonomyBase';
 
 
-const Category = ( { data } ) => {
+const CategoryTemplate = ( { data } ) => {
     const info = {
         type: 'category',
         ...data.category
@@ -11,12 +11,12 @@ const Category = ( { data } ) => {
     
     return (
         <div>
-            <TaxonomyBase info={ info } content={ data.posts.edges } />
+            <TaxonomyBaseTemplate info={ info } content={ data.posts.edges } />
         </div>
     );
 };
 
-export default Category;
+export default CategoryTemplate;
 
 
 

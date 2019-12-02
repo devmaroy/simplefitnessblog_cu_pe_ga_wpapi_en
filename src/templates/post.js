@@ -14,7 +14,7 @@ const PostWrapper = styled.div`
 `;
 
 
-const post = ( { data } ) => {
+const PostTemplate = ( { data } ) => {
     const { post } = data;
 
     const disqusConfig = {
@@ -35,7 +35,7 @@ const post = ( { data } ) => {
 };
 
 
-export default post;
+export default PostTemplate;
 
 
 // Query

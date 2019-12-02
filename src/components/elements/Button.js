@@ -22,6 +22,12 @@ const Button = styled.button`
     transition: ${ props => props.theme.transitions.link };
 `;
 
+Button.defaultProps = {
+    styled: {
+        sm: false
+    }
+}
+
 
 export const ButtonPrimary = styled( Button )`
     color: ${ props => props.theme.colors.light };
@@ -37,6 +43,12 @@ export const ButtonPrimary = styled( Button )`
     }
 `;
 
+ButtonPrimary.defaultProps = {
+    styled: {
+        shadow: true
+    }
+}
+
 
 export const ButtonSecondary = styled( Button )`
     color: ${ props => props.theme.colors.light };
@@ -51,3 +63,9 @@ export const ButtonSecondary = styled( Button )`
         background: ${ props => darken( 0.05, props.theme.colors.secondary ) };
     }
 `;
+
+ButtonSecondary.defaultProps = {
+    styled: {
+        shadow: true
+    }
+}

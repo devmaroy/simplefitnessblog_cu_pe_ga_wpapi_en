@@ -1,41 +1,44 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import styled from 'styled-components';
 import { 
-    ArticleWrapper,
-    Image,
-    Meta,
+    ContentWrapper,
+    FeaturedImage,
     Categories,
-    Category, 
+    Category,
     Time,
-    TitleLarge, 
     TitleLink,
+    TitleLarge,
     Content,
     Tags,
     Tag,
-    SocialShare,
-    SocialShareHeading,
-    SocialShareList,
-    SocialShareListItem,
-    SocialShareLink,
-} from './Article'; 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+} from '../elements/Content'; 
+
+
+// Styles
+
+const Meta = styled.div`
+    margin-top: 2.5rem;
+    margin-bottom: 6rem;
+    text-align: center;
+`;
 
 
 const Post = ( { post } ) => {
     return (
-        <ArticleWrapper>
+        <ContentWrapper>
             <TitleLink to={ `/post/${ post.slug }` }>
                 <TitleLarge dangerouslySetInnerHTML={ { __html: post.title } } />
             </TitleLink>
 
-            <Meta isPost={ true }>
+            <Meta>
                 <Categories>
                     {
-                        post.categories.map( ( category ) => (
+                        post.categories.map( ( { id, slug, name } ) => (
                             <Category 
-                                key={ category.id } 
-                                to={ `/category/${ category.slug }` } 
-                                dangerouslySetInnerHTML={ { __html: category.name } } 
+                                key={ id } 
+                                to={ `/category/${ slug }` } 
+                                dangerouslySetInnerHTML={ { __html: name } } 
                             />
                         ))
                     }
@@ -47,26 +50,26 @@ const Post = ( { post } ) => {
             </Meta>
 
             <Link to={ `/post/${ post.slug }` }>
-                <Image src={ post.featured_media.source_url } alt="Article image" isPost={ true } />
+                <FeaturedImage src={ post.featured_media.source_url } alt="Article image" />
             </Link>
 
             <Content dangerouslySetInnerHTML={ { __html: post.content } } />
-
+            
             <Tags>
                 {
-                    post.tags.map( ( tag ) => (
+                    post.tags.map( ( { id, slug, name } ) => (
                         <Tag
-                            key={ tag.id }
+                            key={ id }
                             as={ Link } 
                             styled={ { sm: true } }
-                            to={ `/tag/${ tag.slug }` } 
-                            dangerouslySetInnerHTML={ { __html: tag.name } }
+                            to={ `/tag/${ slug }` } 
+                            dangerouslySetInnerHTML={ { __html: name } }
                         />
                     ))
                 }
             </Tags>
 
-            { /* Todo */ }
+            { /* Todo 
             <SocialShare>
                 <SocialShareHeading>Share this article</SocialShareHeading>
                 <SocialShareList>
@@ -96,7 +99,8 @@ const Post = ( { post } ) => {
                     </SocialShareListItem>
                 </SocialShareList> 
             </SocialShare>
-        </ArticleWrapper>
+            */ }
+        </ContentWrapper>
     );
 };
 

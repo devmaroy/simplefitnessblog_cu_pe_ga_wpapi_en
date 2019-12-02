@@ -1,34 +1,41 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import styled from 'styled-components';
 import { 
-    ArticleWrapper,
-    Image,
-    Meta,
-    Categories,
-    Category, 
-    Time,
-    Title, 
-    TitleLink,
-    Content,
-    ReadMore, 
-} from './Article'; 
+     ContentWrapper,
+     FeaturedImage,
+     Categories,
+     Category,
+     Time,
+     TitleLink,
+     Title,
+     Content,
+     ReadMore,
+} from '../elements/Content'; 
+
+
+// Styles
+
+const Meta = styled.div`
+    margin-top: 2rem;
+`;
 
 
 const Preview = ( { post } ) => {
     return (
-        <ArticleWrapper>
+        <ContentWrapper>
             <Link to={ `/post/${ post.slug }` }>
-                <Image src={ post.featured_media.source_url } alt="Article image" />
+                <FeaturedImage src={ post.featured_media.source_url } alt="Article image" />
             </Link>
 
             <Meta>
                 <Categories>
                     {
-                        post.categories.map( ( category ) => (
-                            <Category 
-                                key={ category.id } 
-                                to={ `/category/${ category.slug }` } 
-                                dangerouslySetInnerHTML={ { __html: category.name } } 
+                        post.categories.map( ( { id, slug, name } ) => (
+                            <Category
+                                key={ id }
+                                to={ `/category/${ slug }` }
+                                dangerouslySetInnerHTML={ { __html: name } }
                             />
                         ))
                     }
@@ -43,16 +50,12 @@ const Preview = ( { post } ) => {
                 <Title dangerouslySetInnerHTML={ { __html: post.title } } />
             </TitleLink>
 
-            <Content dangerouslySetInnerHTML={ { __html: post.excerpt } } />
+            <Content dangerouslySetInnerHTML={ { __html: post.excerpt } } style={ { margin: 0 } } />
 
-            <ReadMore
-                as={ Link } 
-                to={ `/post/${ post.slug }` }
-                styled={{ shadow: true }}
-            >   
+            <ReadMore as={ Link } to={ `/post/${ post.slug }` }>
                 Read more
             </ReadMore>
-        </ArticleWrapper>
+        </ContentWrapper>
     );
 };
 

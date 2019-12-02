@@ -14,7 +14,7 @@ const BlogListWrapper = styled.div`
 `;
 
 
-const BlogList = ( { data, pageContext } ) => {
+const BlogListTemplate = ( { data, pageContext } ) => {
     const posts = data.allWordpressPost.edges;
     const { currentPage, numPages } = pageContext;
 
@@ -34,7 +34,7 @@ const BlogList = ( { data, pageContext } ) => {
     );
 };
 
-export default BlogList;
+export default BlogListTemplate;
 
 
 
