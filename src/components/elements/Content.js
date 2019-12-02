@@ -25,7 +25,7 @@ export const ReadMore = styled( ButtonPrimary )`
 // Image
 
 export const FeaturedImage = styled.img`
-    border-radius: .6rem;
+    border-radius: ${ props => props.theme.base.borderRadius };
 
     transition: ${ props => props.theme.transitions.general };
 

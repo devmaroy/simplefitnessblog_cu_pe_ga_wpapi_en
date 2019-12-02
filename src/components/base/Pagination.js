@@ -29,7 +29,7 @@ const PaginationLink = styled( Link )`
     width: 2rem;
     height: 2rem;
     padding: 1rem;
-    border-radius: .6rem;
+    border-radius: ${ props => props.theme.base.borderRadius };
     background: ${ props => props.styled.isCurrent ? darken( 0.05, props.theme.colors.secondary ) : props.theme.colors.secondary };
     color: ${ props => props.theme.colors.light };
 

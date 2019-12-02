@@ -12,7 +12,7 @@ const Button = styled.button`
     padding: 1.2rem 2rem;
     font-weight: ${ props => props.theme.fonts.weights.bold };
     line-height: 1.2;
-    border-radius: .6rem;
+    border-radius: ${ props => props.theme.base.borderRadius };
     cursor: pointer;
 
     ${ props => props.styled.sm &&
