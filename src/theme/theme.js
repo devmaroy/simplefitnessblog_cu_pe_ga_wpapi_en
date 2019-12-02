@@ -1,3 +1,9 @@
+// Base
+const base = {
+    borderRadius: '.6rem' 
+}
+
+
 // Colors
 const colors = {
     primary: '#F0386B',
@@ -90,6 +96,7 @@ const elements = {
 
 
 export default {
+    base,
     colors,
     fonts,
     transitions,
