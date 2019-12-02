@@ -10,14 +10,14 @@ import Pagination from '../components/base/Pagination';
 // Styles
 
 const BlogListWrapper = styled.div`
-    margin-top: 8rem;
+    margin-top: 8rem;    
 `;
 
 
 const BlogListTemplate = ( { data, pageContext } ) => {
     const posts = data.allWordpressPost.edges;
     const { currentPage, numPages } = pageContext;
-
+    
     return (
         <Layout>
             <Container>
@@ -57,7 +57,13 @@ export const templateQuery = graphql`
                         slug
                     }
                     featured_media {
-                        source_url
+                        localFile {
+                            childImageSharp {
+                                fluid( maxWidth: 800, maxHeight: 600 ) {
+                                    ...GatsbyImageSharpFluid
+                                }
+                            }
+                        }
                     }
                 }
             }

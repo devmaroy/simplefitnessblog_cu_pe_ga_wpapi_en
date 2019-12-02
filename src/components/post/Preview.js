@@ -22,10 +22,11 @@ const Meta = styled.div`
 
 
 const Preview = ( { post } ) => {
+
     return (
         <ContentWrapper>
             <Link to={ `/post/${ post.slug }` }>
-                <FeaturedImage src={ post.featured_media.source_url } alt="Article image" />
+                <FeaturedImage fluid={ post.featured_media.localFile.childImageSharp.fluid } />
             </Link>
 
             <Meta>

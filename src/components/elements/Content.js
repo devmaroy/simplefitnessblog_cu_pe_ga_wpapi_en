@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import Img from 'gatsby-image';
 import { darken, lighten } from 'polished';
 import { ButtonPrimary, ButtonSecondary } from '../elements/Button';
 
@@ -24,7 +25,7 @@ export const ReadMore = styled( ButtonPrimary )`
 
 // Image
 
-export const FeaturedImage = styled.img`
+export const FeaturedImage = styled( Img )`
     border-radius: ${ props => props.theme.base.borderRadius };
 
     transition: ${ props => props.theme.transitions.general };
