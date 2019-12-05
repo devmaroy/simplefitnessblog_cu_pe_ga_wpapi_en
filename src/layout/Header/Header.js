@@ -2,30 +2,39 @@ import React from 'react';
 import styled from 'styled-components';
 import Container from '../base/Container';
 import SiteLogo from './SiteLogo';
-import Navigation from './navigation/Navigation';
+import Navigation from './Navigation';
 
 
 // Styles
 
-const HeaderContent = styled.div`
+const HeaderWrapper = styled.header`
+    margin: 3rem 0;
+`;
+
+
+const HeaderInner = styled.div`
     display: flex;
     justify-content: space-between;
-    margin: 3rem 0;
 `;
 
 
 const Header = () => {
     return (
-        <header>
+        <HeaderWrapper>
             <Container>
-                <HeaderContent>
-                    <SiteLogo width={ '20rem' } />
-                    <Navigation />    
-                </HeaderContent>
+                <HeaderInner>
+                    <SiteLogo />
+                    <Navigation />
+                </HeaderInner>
             </Container>
-        </header>
-    )
-}
-
+        </HeaderWrapper>
+    );
+};
 
 export default Header;
+
+
+
+
+
+
