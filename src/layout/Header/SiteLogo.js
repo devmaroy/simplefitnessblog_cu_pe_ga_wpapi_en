@@ -1,35 +1,37 @@
 import React from 'react';
 import styled from 'styled-components';
 import { graphql, StaticQuery, Link } from 'gatsby';
+import { darken } from 'polished';
 
 
 // Styles
 
 const Logo = styled( Link )`
-    line-height: 0;
-    
-    img {
-        width: ${ props => props.styled.width };
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: ${ props => props.theme.fonts.secondary };
+    font-size: 2.2rem;
+    font-weight: ${ props => props.theme.fonts.weights.bold };
+    color: ${ props => props.theme.colors.primary };
+
+    transition: ${ props => props.theme.transitions.general };
+
+    &:hover,
+    &:focus {
+        color: ${ props => darken( 0.1, props.theme.colors.primary ) };
     }
 `;
 
-Logo.defaultProps = {
-    styled: {
-        width: '20rem'
-    }
-}
 
 
 // Query
 
 const query = graphql`
     {
-        allWordpressWpLogo {
+        allWordpressSiteMetadata {
             edges {
                 node {
-                    url {
-                        source_url
-                    }
+                    name
                 }
             }
         }
@@ -40,11 +42,11 @@ const query = graphql`
 const SiteLogo = () => {
     return (
         <StaticQuery query={ query } render={ ( data ) => {
-            const logoURL = data.allWordpressWpLogo.edges[0].node.url.source_url;
+           const logo = data.allWordpressSiteMetadata.edges[0].node.name;
 
             return (
                 <Logo to="/blog">
-                    <img src={ logoURL } alt="Site logo" />
+                    { logo }
                 </Logo>
             )
         }} />

@@ -49,6 +49,15 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      allWordpressTag {
+        edges {
+          node {
+            id
+            name
+            slug
+          }
+        }
+      }
     }
   `)
 
@@ -58,11 +67,11 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   // Access query results via object destructuring
-  const { allWordpressPage, allWordpressPost, allWordpressCategory } = result.data
+  const { allWordpressPage, allWordpressPost, allWordpressCategory, allWordpressTag } = result.data
 
   // Create Page pages.
   const pageTemplate = path.resolve(`./src/templates/page.js`)
-  const postsUnderContentTemlate = path.resolve(`./src/templates/postsUnderContent.js`)
+  
   // We want to create a detailed page for each page node.
   // The path field contains the relative original WordPress link
   // and we use it for the slug to preserve url structure.
@@ -101,7 +110,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const blogList = path.resolve(`./src/templates/blogList.js`)
   const posts = allWordpressPost.edges
-  const postsPerPage = 6
+  const postsPerPage = 9
   const numPages = Math.ceil( posts.length / postsPerPage )
 
   Array.from( { length: numPages } ).map( ( _, i ) => {
@@ -125,6 +134,21 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: `/category/${ edge.node.slug }`,
       component: slash(categoryTemplate),
+      context: {
+        id: edge.node.id,
+        name: edge.node.name,
+      },
+    })
+  })
+
+
+  const tagTemplate = path.resolve(`./src/templates/tag.js`);
+  
+  // Create pages for tags
+  allWordpressTag.edges.forEach( edge => {
+    createPage({
+      path: `/tag/${ edge.node.slug }`,
+      component: slash(tagTemplate),
       context: {
         id: edge.node.id,
         name: edge.node.name,

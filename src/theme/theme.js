@@ -5,14 +5,28 @@ const base = {
 
 
 // Colors
-const colors = {
+/*const colors = {
     primary: '#F0386B',
     secondary: '#F8C0C8',
     light: '#FFF',
     dark: '#403c3d',
-    gray: '#797475',
+    gray: '#5a595c',
     lightGray: '#adadad',
     veryLightGray: '#cac9c9',
+    background: '#FFF',
+    transparentBlack: 'rgba( 0, 0, 0, .5 )',
+    overlayLinearGradient: 'linear-gradient( rgba( 0, 0, 0, 0.5 ), rgba( 0, 0, 0, 0.5 ) )',
+}*/
+
+const colors = {
+    primary: '#3772FF',
+    secondary: '#000',
+    light: '#FFFFFF',
+    dark: '#191716',
+    gray: '#363537',
+    lightGray: '#7a787c',
+    veryLightGray: '#000',
+    pagination: '#f1eff2',
     background: '#FFF',
     transparentBlack: 'rgba( 0, 0, 0, .5 )',
     overlayLinearGradient: 'linear-gradient( rgba( 0, 0, 0, 0.5 ), rgba( 0, 0, 0, 0.5 ) )',
@@ -94,6 +108,12 @@ const elements = {
 }
 
 
+// Breakpoints
+const breakpoints = {
+    medium: '900px',
+    large: '1750px'
+};
+
 
 export default {
     base,
@@ -101,4 +121,5 @@ export default {
     fonts,
     transitions,
     elements,
+    breakpoints,
 }

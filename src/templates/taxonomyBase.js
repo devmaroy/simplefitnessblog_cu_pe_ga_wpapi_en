@@ -8,7 +8,7 @@ import Preview from '../components/post/Preview';
 // Styles
 
 const TaxonomiesWrapper = styled.div`
-    margin-top: 8rem;
+   margin-top: 10rem;
 `;
 
 
@@ -24,7 +24,19 @@ const TaxonomiesInfo = styled.p`
 
 
 const TaxonomiesContent = styled.div`
-   margin-top: 8rem;
+    display: grid;
+    grid-gap: 4rem;
+    margin-top: 4rem;
+     
+
+    @media ( min-width: 830px ) {
+        grid-template-columns: repeat( 2, minmax( 0, 1fr ) );
+        grid-gap: 2rem;
+    }
+
+    @media ( min-width: 1180px ) {
+        grid-template-columns: repeat( 3, minmax( 0, 1fr ) );
+    }
 `;
 
 
@@ -36,19 +48,18 @@ const TaxonomyBase = ( props ) => {
             <Container>
                 <TaxonomiesWrapper>
                     <TaxonomiesInfo>
-                        Browsing { props.info.type }: 
-                        <strong 
-                            dangerouslySetInnerHTML={ { __html: ` "${ info.name }"` } } 
-                        />
+                        Browsing { props.info.type }
+                        <strong dangerouslySetInnerHTML={ { __html: ` "${ info.name }"` } } />
                     </TaxonomiesInfo>
+
+                    <TaxonomiesContent>
+                        {
+                            content.map( ( { node: post } ) => (
+                                <Preview key={ post.id } post={ post } />
+                            ))
+                        }
+                    </TaxonomiesContent>
                 </TaxonomiesWrapper>
-                <TaxonomiesContent>
-                    {
-                        content.map( ( { node } ) => (
-                            <Preview key={ node.id } post={ node } isTeaser={ true } />
-                        ))
-                    }
-                </TaxonomiesContent>
             </Container>
         </Layout>
     );

@@ -314,7 +314,7 @@ Image Alignments and Captions
 .aligncenter,
 div.aligncenter {
     display: block;
-    margin: 5px auto 20px auto;
+	margin: 5px auto 20px auto;
 }
 
 .alignright {
@@ -329,7 +329,8 @@ div.aligncenter {
 
 .aligncenter {
     display: block;
-    margin: 5px auto 20px auto;
+	margin: 5px auto 20px auto;
+	text-align: center;
 }
 
 a img.alignright {
@@ -1031,3 +1032,134 @@ Footer
     border-color: #f7ca18;
 }
 
+
+
+
+html {
+	box-sizing: border-box;
+  }
+  *, *:before, *:after {
+	box-sizing: inherit;
+  }
+
+
+
+/*
+.cover-wrapper {
+	position: relative;
+}
+
+.article-thumbnail img {
+	display: flex;
+    object-fit: cover;
+    transition: all 0.5s ease;
+    filter: brightness(90%);
+}
+
+.article-header {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	margin: 0;
+	padding: 3rem;
+}
+*/
+
+.article-thumbnail {
+	position: relative;
+	height: 50rem;
+	
+}
+
+.article-thumbnail::before {
+	content: "";
+	position: absolute;
+	top: 0; left: 0;
+	width: 100%; 
+	height: 100%;
+	background-image: url('https://images.pexels.com/photos/258045/pexels-photo-258045.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+	background-size: cover;
+	filter: brightness(70%);
+	border-radius: .6rem;
+}
+
+.article-thumbnail-content {
+	position: relative;
+	display: flex;
+	align-items: center;
+	height: 100%;
+	padding: 4rem;
+}
+
+
+.article-category {
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: white;
+	background: blueviolet;
+	padding: .7rem 1.2rem;
+	border-radius: .6rem;
+	font-size: 1.4rem;
+}
+
+.article-title-link {
+	text-decoration: none;
+	color: white;
+}
+
+.article-title {
+	font-family: Rubik, sans-serif;
+	font-size: 45px;
+	line-height: 54px;
+	font-weight: bold;
+	margin: 6rem 0;
+}
+
+.article-meta {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	align-items: center;
+	color: white;
+}
+
+
+.article-author-avatar {
+	border-radius: 50%;
+	width: 3rem;
+	line-height: 0;
+	margin-right: 1rem;
+}
+
+.article-author-name {
+	display: inline-block;
+	color: rgba(255,255,255,.9);
+	text-decoration: none;
+	font-weight: bold;
+	margin-bottom: 1rem;
+}
+
+.article-author-name:hover {
+	color: white;
+}
+
+.article-date {
+	margin-bottom: 1rem;
+	margin-left: 4rem;
+	font-weight: bold;
+}
+
+.article-date-icon {
+	font-size: 1.4rem;
+	margin-right: .5rem;
+}
+
+.article-content {
+	font-size: 1.8rem;
+    line-height: 2.9rem;
+    color: #5a595c;
+	margin: 6rem 0;
+}

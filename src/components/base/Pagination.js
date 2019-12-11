@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import { darken } from 'polished';
 
 
 // Styles
@@ -17,27 +16,28 @@ const PaginationList = styled.ul`
 
 const PaginationItem = styled.li`
     display: inline-block;
-    margin-right: .5rem;
+    margin-right: .8rem;
     text-align: center;
-    line-height: 1.5;
 `;
 
 
 const PaginationLink = styled( Link )`
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-decoration: none;
-    width: 2rem;
-    height: 2rem;
-    padding: 1rem;
+    width: 3.6rem;
+    height: 3.6rem;
     border-radius: ${ props => props.theme.base.borderRadius };
-    background: ${ props => props.styled.isCurrent ? darken( 0.05, props.theme.colors.secondary ) : props.theme.colors.secondary };
-    color: ${ props => props.theme.colors.light };
+    background: ${ props => props.styled.isCurrent ? props.theme.colors.pagination : 'none' };
+    color: ${ props => props.theme.colors.lightGray };
+    font-weight: ${ props => props.theme.fonts.weights.bold };
 
-    transition: ${ props => props.theme.transitions.link };
+    transition: ${ props => props.theme.transitions.general };
 
     &:hover,
     &:focus {
-        background: ${ props => darken( 0.05, props.theme.colors.secondary ) };
+        background: ${ props => props.theme.colors.pagination };
     }
 `;
 
@@ -56,7 +56,7 @@ const Pagination = ( { numberOfPages, currentPage, prefix } ) => {
     const isLast = currentPage === numberOfPages;
     const previousPage = currentPage - 1 === 1 ? `/${ prefix }` : `/${ prefix }/${ currentPage - 1 }`;
     const nextPage = `/${ prefix }/${ currentPage + 1 }`;
-    
+
     return (
         <PaginationList>
             {
@@ -66,13 +66,12 @@ const Pagination = ( { numberOfPages, currentPage, prefix } ) => {
                             &lt; 
                         </PaginationLink>
                     </PaginationItem>
-                )   
+                )  
             }
             {
                 Array.from( { length: numberOfPages } ).map( ( _, i ) => (
                     <PaginationItem key={ i }>
                         <PaginationLink
-                            key={ i }
                             to={ i === 0 ? `/${ prefix }` : `/${ prefix }/${ i + 1 }` }
                             styled={ { isCurrent: i + 1 === currentPage } }
                         >
@@ -93,6 +92,5 @@ const Pagination = ( { numberOfPages, currentPage, prefix } ) => {
         </PaginationList>
     );
 };
-
 
 export default Pagination;

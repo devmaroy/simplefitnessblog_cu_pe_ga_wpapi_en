@@ -28,13 +28,13 @@ const SocialListItem = styled.li`
 
 
 const SocialLink = styled( Link )`
-    color: ${ props => transparentize( 0.2, props.theme.colors.veryLightGray ) };
+    color: ${ props => transparentize( 0.2, props.theme.colors.primary ) };
 
     transition: ${ props => props.theme.transitions.link };
 
     &:hover,
     &:focus {
-        color: ${ props => props.theme.colors.veryLightGray };
+        color: ${ props => props.theme.colors.primary };
     }
 
     svg {

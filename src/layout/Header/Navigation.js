@@ -77,7 +77,7 @@ class Navigation extends Component {
         return (
             <div> 
                 <MenuIcon onClick={ this.toggleMenu }>
-                    <img src={ menuIcon } alt="" />
+                    <img src={ menuIcon } alt="Hamburger menu icon" />
                 </MenuIcon>
     
                 <NavigationInner showMenu={ this.state.showMenu }>

@@ -3,10 +3,10 @@ import { graphql } from 'gatsby';
 import TaxonomyBaseTemplate from './TaxonomyBase';
 
 
-const CategoryTemplate = ( { data } ) => {
+const TagTemplate = ( { data } ) => {
     const info = {
-        type: 'category',
-        ...data.category
+        type: 'tag',
+        ...data.tag
     }
     
     return (
@@ -16,7 +16,7 @@ const CategoryTemplate = ( { data } ) => {
     );
 };
 
-export default CategoryTemplate;
+export default TagTemplate;
 
 
 
@@ -24,13 +24,13 @@ export default CategoryTemplate;
 
 export const templateQuery = graphql`
     query( $id: String!, $name: String! ) {
-        category: wordpressCategory( id: { eq: $id } ) {
+        tag: wordpressTag( id: { eq: $id } ) {
             id
             name
             slug
         }
         posts: allWordpressPost( filter: {
-            categories: {
+            tags: {
                 elemMatch: {
                     name: {
                         eq: $name

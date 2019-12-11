@@ -34,15 +34,18 @@ const MenuListItem = styled.li`
 const MenuLink = styled( Link )`
     display: block;
     text-decoration: none;
+    
     padding: 1rem 0;
-    font-weight: 700;
-    color: ${ props => transparentize( 0.2, props.theme.colors.dark ) };
+    font-family: ${ props => props.theme.fonts.secondary };
+    font-weight: bold;
+    color: ${ props => transparentize( 0.2, props.theme.colors.gray ) };
+    color: #626b76;
 
     transition: color ${ props => props.theme.transitions.link };
 
     &:hover,
     &:focus {
-        color: ${ props => props.theme.colors.dark };
+        color: ${ props => props.theme.colors.primary };
     }
 
     @media ( min-width: 858px ) {

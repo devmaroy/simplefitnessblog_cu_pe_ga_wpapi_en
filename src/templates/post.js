@@ -1,35 +1,15 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import styled from 'styled-components';
 import Layout from '../layout/base/Layout';
-import Container from '../layout/base/Container';
 import Post from '../components/post/Post';
-import { DiscussionEmbed } from 'disqus-react';
-
-
-// Styles
-
-const PostWrapper = styled.div`
-    margin-top: 8rem;
-`;
 
 
 const PostTemplate = ( { data } ) => {
     const { post } = data;
 
-    const disqusConfig = {
-        shortname: process.env.GATSBY_DISQUS_NAME,
-        config: { identifier: post.slug, title: post.title },
-    }
-
     return (
         <Layout>
-            <Container>
-                <PostWrapper>
-                    <Post post={ post } />
-                    <DiscussionEmbed {...disqusConfig} />
-                </PostWrapper>
-            </Container>      
+            <Post post={ post } />
         </Layout>
     );
 };
@@ -47,6 +27,14 @@ export const Query = graphql`
             content
             plainDate: date
             date( formatString: "MMMM DD, YYYY" )
+            author {
+                name
+                url
+                description
+                avatar_urls {
+                    wordpress_96
+                }
+            }
             categories {
                 id
                 name
@@ -58,7 +46,13 @@ export const Query = graphql`
                 slug
             }
             featured_media {
-                source_url
+                localFile {
+                    childImageSharp {
+                        fluid( maxWidth: 2560, quality: 100 ) {
+                            ...GatsbyImageSharpFluid
+                        }
+                    }
+                }
             }
         }
     }

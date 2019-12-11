@@ -5,13 +5,14 @@ import theme from '../../theme/theme';
 import '../../WordpressCoreStyles.css';
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faGreaterThan, faLessThan  } from '@fortawesome/free-solid-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { faAddressBook } from '@fortawesome/free-solid-svg-icons';
+import { faClock  } from '@fortawesome/free-regular-svg-icons';
 
 
 // Create font awesome icon library
-library.add(fab, faGreaterThan, faLessThan)
+library.add( fab, faClock );
 
 
 const GlobalStyles = createGlobalStyle`
@@ -28,6 +29,7 @@ const GlobalStyles = createGlobalStyle`
         font-size: 1.6rem;
         line-height: 1.6;
         background: ${ props => props.theme.colors.background };
+        -webkit-font-smoothing: antialiased;
     }
 
     img {
