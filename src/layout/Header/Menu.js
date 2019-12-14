@@ -1,10 +1,33 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { graphql, StaticQuery, Link } from 'gatsby';
 import styled from 'styled-components';
-import { transparentize } from 'polished';
 
 
-// Styled
+// Query
+
+const query = graphql`
+    {
+        allWordpressWpApiMenusMenusItems( filter: {
+            name: {
+                eq: "Main Menu"
+            }
+        }) {
+            edges {
+                node {
+                    items {
+                        title
+                        url
+                        object_slug
+                    }
+                }
+            }
+        }
+    }
+`;
+
+
+
+// Styles
 
 const MenuList = styled.ul`
     list-style: none;
@@ -34,12 +57,11 @@ const MenuListItem = styled.li`
 const MenuLink = styled( Link )`
     display: block;
     text-decoration: none;
-    
-    padding: 1rem 0;
+
     font-family: ${ props => props.theme.fonts.secondary };
-    font-weight: bold;
-    color: ${ props => transparentize( 0.2, props.theme.colors.gray ) };
-    color: #626b76;
+    font-weight: ${ props => props.theme.fonts.weights.bold };
+    padding: 1rem 0;
+    color: ${ props => props.theme.colors.offGray };
 
     transition: color ${ props => props.theme.transitions.link };
 
@@ -57,23 +79,25 @@ const MenuLink = styled( Link )`
 
 const Menu = () => {
     return (
-        <nav>
-            <MenuList>
-                <MenuListItem>
-                    <MenuLink to="/">Home</MenuLink>
-                </MenuListItem>
-                <MenuListItem>
-                    <MenuLink to="/" >Elements</MenuLink>
-                </MenuListItem>
-                <MenuListItem>
-                    <MenuLink to="/">Membership</MenuLink>
-                </MenuListItem>
-                <MenuListItem>
-                    <MenuLink to="/">Contact</MenuLink>
-                </MenuListItem>
-            </MenuList>
-        </nav>
-    );
-};
+        <StaticQuery query={ query } render={ ( data ) => {
+            const links = data.allWordpressWpApiMenusMenusItems.edges[0].node.items;
+
+            return (
+                <nav>
+                    <MenuList>
+                        {
+                            links.map( ( { title, object_slug } ) => (
+                                <MenuListItem key={ title }>
+                                    <MenuLink to={ `/${ object_slug }` }>{ title }</MenuLink>
+                                </MenuListItem>
+                            ))
+                        }
+                    </MenuList>
+                </nav>
+            )
+        }} />
+    )
+}
+
 
 export default Menu;

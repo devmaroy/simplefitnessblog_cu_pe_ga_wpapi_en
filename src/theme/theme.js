@@ -22,6 +22,7 @@ const colors = {
     primary: '#3772FF',
     secondary: '#000',
     light: '#FFFFFF',
+    offGray: '#626b76',
     dark: '#191716',
     gray: '#363537',
     lightGray: '#7a787c',
