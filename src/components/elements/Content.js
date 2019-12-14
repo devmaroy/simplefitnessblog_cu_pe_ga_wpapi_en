@@ -148,23 +148,63 @@ export const Content = styled.div`
     }
 
     h1 {
-        font-size: 45px;
-        line-height: 54px;
+        font-size: 4rem;
+        line-height: 4.8rem;
+
+        @media ( min-width: ${ props => props.theme.breakpoints.medium } ) {
+            font-size: 4.5rem;
+            line-height: 5.4rem;
+        }
     }
 
     h2 {
-        font-size: 37px;
-        line-height: 44px;
+        font-size: 3.3rem;
+        line-height: 4rem;
+
+        @media ( min-width: ${ props => props.theme.breakpoints.medium } ) {
+            font-size: 3.7rem;
+            line-height: 4.4rem;
+        }
     }
 
     h3 {
-        font-size: 31px;
-        line-height: 37px;
+        font-size: 2.8rem;
+        line-height: 3.4rem;
+
+        @media ( min-width: ${ props => props.theme.breakpoints.medium } ) {
+            font-size: 3.1rem;
+            line-height: 3.7rem;
+        }
     }
 
     h4 {
-        font-size: 26px;
-        line-height: 31px; 
+        font-size: 2.3rem;
+        line-height: 2.8rem; 
+
+        @media ( min-width: ${ props => props.theme.breakpoints.medium } ) {
+            font-size: 2.6rem;
+            line-height: 3.1rem;
+        }
+    }
+
+    h5 {
+        font-size: 1.9rem;
+        line-height: 2.3rem;
+
+        @media ( min-width: ${ props => props.theme.breakpoints.medium } ) {
+            font-size: 2.2rem;
+            line-height: 2.6rem; 
+        }
+    }
+
+    h6 {
+        font-size: 1.6rem;
+        line-height: 1.9rem; 
+
+        @media ( min-width: ${ props => props.theme.breakpoints.medium } ) {
+            font-size: 1.8rem;
+            line-height: 2.2rem; 
+        }
     }
 
     a {
@@ -195,13 +235,22 @@ export const Content = styled.div`
     }
 
     p, ul, ol {
-        font-size: 1.8rem;
-        margin: 0 0 4rem 0;
-        line-height: 3.2rem;
+        font-size: 1.6rem;
+        line-height: 2.9rem;   
+        margin: 0 0 4rem 0;       
+
+        @media ( min-width: ${ props => props.theme.breakpoints.medium } ) {
+            font-size: 1.8rem;
+            line-height: 3.2rem;
+        }
     }
 
     ul li, ol li {
         padding-left: 1.2rem;
+
+        &:not( :last-child ) {
+            margin-bottom: 1.5rem;
+        }
     }
 
     figure {
@@ -221,15 +270,23 @@ export const Content = styled.div`
 
         p {
             font-family: ${ props => props.theme.fonts.secondary };
-            font-size: 2.4rem;
-            line-height: 4rem;
+            font-size: 2rem;
+            line-height: 3.6rem;
+
+            @media ( min-width: ${ props => props.theme.breakpoints.medium } ) {
+                font-size: 2.4rem;
+                line-height: 4rem;
+            }
         }
 
         cite {
             color: ${ props => props.theme.colors.lightGray };
-            font-size: 1.8rem;
-        
+            font-size: 1.6rem;
 
+            @media ( min-width: ${ props => props.theme.breakpoints.medium } ) {
+                font-size: 1.8rem;
+            }
+        
             &::before {
                 content: "\u2014 ";
                 color: ${ props => lighten( 0.2, props.theme.colors.primary ) };

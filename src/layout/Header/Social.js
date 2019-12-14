@@ -1,20 +1,14 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import styled from 'styled-components';
-import { transparentize } from 'polished';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import SocialIcon from './SocialIcon';
 
 
 // Styles
 
 const SocialList = styled.ul`
     list-style: none;
-    margin: 6rem 0 0 0;
+    margin: 3rem 0 0 0;
     padding: 0;
-
-    @media ( min-width: 858px ) {
-        margin: 0 0 0 6rem;
-    }
 `;
 
 
@@ -27,8 +21,8 @@ const SocialListItem = styled.li`
 `;
 
 
-const SocialLink = styled( Link )`
-    color: ${ props => transparentize( 0.2, props.theme.colors.primary ) };
+const SocialLink = styled.a`
+    color: ${ props => props.theme.colors.dark };
 
     transition: ${ props => props.theme.transitions.link };
 
@@ -36,44 +30,28 @@ const SocialLink = styled( Link )`
     &:focus {
         color: ${ props => props.theme.colors.primary };
     }
-
-    svg {
-        font-size: 1.6rem;
-    }
-`; 
+`;
 
 
-const Social = () => {
+const Social = ( { links, type, fixedWidth } ) => {
     return (
-        <div>
-            <SocialList>
-                <SocialListItem>
-                    <SocialLink to="/">
-                        <FontAwesomeIcon 
-                            icon={["fab", "twitter"]}
-                            fixedWidth 
-                        />
-                    </SocialLink>
-                </SocialListItem>
-                <SocialListItem>
-                    <SocialLink to="/">
-                        <FontAwesomeIcon 
-                            icon={["fab", "facebook-f"]}
-                            fixedWidth 
-                        />
-                    </SocialLink>
-                </SocialListItem>
-                <SocialListItem>
-                    <SocialLink to="/">
-                        <FontAwesomeIcon 
-                            icon={["fab", "instagram"]}
-                            fixedWidth 
-                        />
-                    </SocialLink>
-                </SocialListItem>
-            </SocialList>
-        </div>
+        <SocialList>
+            {
+                links.map( ( { title, url } ) => {
+                    if ( url ) {
+                        return (
+                            <SocialListItem key={ title }>
+                                <SocialLink href={ url }>
+                                    <SocialIcon icon={ title } type={ type } fixedWidth={ fixedWidth } />
+                                </SocialLink>
+                            </SocialListItem>
+                        )
+                    }
+                })
+            }
+        </SocialList>
     );
 };
 
-export default Social;  
+
+export default Social;

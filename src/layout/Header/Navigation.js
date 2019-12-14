@@ -82,7 +82,7 @@ class Navigation extends Component {
     
                 <NavigationInner showMenu={ this.state.showMenu }>
                     <Menu />
-                    <Social />
+                    {/*<Social />*/}
                 </NavigationInner>
 
                 <Overlay showMenu={ this.state.showMenu } onClick={ this.toggleMenu } />

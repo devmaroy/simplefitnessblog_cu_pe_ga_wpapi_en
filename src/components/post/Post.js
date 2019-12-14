@@ -1,15 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { lighten } from 'polished';
-import {
-    AuthorAvatar,
-    AuthorName,
-    Content,
-} from '../elements/Content';
+import { AuthorAvatar, AuthorName, Content } from '../elements/Content';
 import Hero from './Hero';
 import Container from '../../layout/base/Container';
+import Social from '../../layout/header/Social';
 import { DiscussionEmbed } from 'disqus-react';
-
 
 
 // Styles
@@ -20,13 +16,19 @@ const ContentWrapper = styled.div`
 
 const Footer = styled.footer`
     background: ${ props => lighten( 0.51, props.theme.colors.lightGray ) };
-    padding: 6rem;
+    padding: 3rem;
+    text-align: center;
     line-height: 3.2rem;
     border-radius: ${ props => props.theme.base.borderRadius };
     margin: 10rem 0;
 
-    display: flex;
     color: ${ props => props.theme.colors.gray };
+
+    @media ( min-width: ${ props => props.theme.breakpoints.medium } ) {
+        display: flex;
+        padding: 6rem;
+        text-align: left;
+    }
 `;
 
 const FooterAuthorAvatar = styled.div`
@@ -39,12 +41,16 @@ const FooterAuthorAvatar = styled.div`
 `;
 
 const FooterAuthorInfo = styled.div`
-    max-width: 80%;
+    @media ( min-width: ${ props => props.theme.breakpoints.medium } ) {
+        max-width: 80%;
+    }
 
     ${ AuthorName } {
-        color: ${ props => props.theme.colors.dark };
-        margin: 0;
+        font-family: ${ props => props.theme.fonts.secondary };
         font-size: 2.2rem;
+        font-weight: ${ props => props.theme.fonts.weights.medium };
+        color: ${ props => props.theme.colors.dark };
+        margin: 0; 
 
         &:hover,
         &:focus {
@@ -96,10 +102,12 @@ const Post = ( { post } ) => {
                     <FooterAuthorAvatar>
                         <AuthorAvatar src={ author.avatar_urls.wordpress_96 } alt={ `Avatar for ${ author.name }` } />
                     </FooterAuthorAvatar>
-
+                
                     <FooterAuthorInfo>
                         <AuthorName href={ author.url }>{ author.name }</AuthorName>
                         <p>{ author.description }</p> 
+
+                        <Social links={ author.social_links } />
                     </FooterAuthorInfo>
                 </Footer>
 

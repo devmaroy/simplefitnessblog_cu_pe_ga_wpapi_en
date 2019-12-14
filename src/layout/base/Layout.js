@@ -7,12 +7,12 @@ import Header from '../header/Header';
 import Footer from '../footer/Footer';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-import { faAddressBook } from '@fortawesome/free-solid-svg-icons';
+import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { faClock  } from '@fortawesome/free-regular-svg-icons';
 
 
 // Create font awesome icon library
-library.add( fab, faClock );
+library.add( fab, faClock, faGlobe );
 
 
 const GlobalStyles = createGlobalStyle`

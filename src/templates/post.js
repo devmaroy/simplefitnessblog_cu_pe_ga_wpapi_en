@@ -19,7 +19,7 @@ export default PostTemplate;
 
 
 // Query
-export const Query = graphql`
+export const templateQuery = graphql`
     query( $id: String! ) {
         post: wordpressPost( id: { eq: $id } ) {
             title
@@ -33,6 +33,10 @@ export const Query = graphql`
                 description
                 avatar_urls {
                     wordpress_96
+                }
+                social_links {
+                    title
+                    url
                 }
             }
             categories {
