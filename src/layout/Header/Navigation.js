@@ -12,7 +12,7 @@ const MenuIcon = styled.button`
     border: none;
     cursor: pointer;
 
-    @media ( min-width: 858px ) {
+    @media ( min-width: ${ props => props.theme.breakpoints.medium } ) {
         display: none;
     }
 `;
@@ -32,7 +32,7 @@ const NavigationInner = styled.div`
 
     transition: left .5s;
 
-    @media ( min-width: 858px ) {
+    @media ( min-width: ${ props => props.theme.breakpoints.medium } ) {
         display: flex;
         position: static;
         width: auto;
@@ -56,7 +56,7 @@ const Overlay = styled.div`
 
 	transition: opacity .25s ease, visibility 0s ease;
 
-    @media ( min-width: 858px ) {
+    @media ( min-width: ${ props => props.theme.breakpoints.medium } ) {
         display: none;
     }
 `;

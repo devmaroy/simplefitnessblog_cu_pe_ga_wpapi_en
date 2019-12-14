@@ -34,7 +34,7 @@ const MenuList = styled.ul`
     margin: 4rem 0 4rem 0;
     padding: 0;
 
-    @media ( min-width: 858px ) {
+    @media ( min-width: ${ props => props.theme.breakpoints.medium } ) {
         margin: 0 6rem 0 0;
     }
 `;
@@ -44,7 +44,7 @@ const MenuListItem = styled.li`
     display: block;
     margin: 0;
 
-    @media ( min-width: 858px ) {
+    @media ( min-width: ${ props => props.theme.breakpoints.medium } ) {
         display: inline-block;
 
         &:not( :last-child ) {
@@ -70,7 +70,7 @@ const MenuLink = styled( Link )`
         color: ${ props => props.theme.colors.primary };
     }
 
-    @media ( min-width: 858px ) {
+    @media ( min-width: ${ props => props.theme.breakpoints.medium } ) {
         display: inline-block;
         padding: 0;
     }
