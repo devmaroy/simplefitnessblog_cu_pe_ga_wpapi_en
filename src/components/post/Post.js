@@ -4,7 +4,7 @@ import { lighten } from 'polished';
 import { AuthorAvatar, AuthorName, Content } from '../elements/Content';
 import Hero from './Hero';
 import Container from '../../layout/base/Container';
-import Social from '../../layout/header/Social';
+import SocialLinks from '../base/SocialLinks';
 import { DiscussionEmbed } from 'disqus-react';
 
 
@@ -107,7 +107,7 @@ const Post = ( { post } ) => {
                         <AuthorName href={ author.url }>{ author.name }</AuthorName>
                         <p>{ author.description }</p> 
 
-                        <Social links={ author.social_links } />
+                        <SocialLinks links={ author.social_links } />
                     </FooterAuthorInfo>
                 </Footer>
 

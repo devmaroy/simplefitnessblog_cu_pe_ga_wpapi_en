@@ -1,55 +1,40 @@
 import React from 'react';
-import styled from 'styled-components';
-import SocialIcon from './SocialIcon';
+import { graphql, StaticQuery } from 'gatsby';
+import SocialLinks from '../../components/base/SocialLinks';
 
 
-// Styles
+// Query
 
-const SocialList = styled.ul`
-    list-style: none;
-    margin: 3rem 0 0 0;
-    padding: 0;
-`;
-
-
-const SocialListItem = styled.li`
-    display: inline-block;
-
-    &:not( :last-child ) {
-        margin-right: 2rem;
-    }
-`;
-
-
-const SocialLink = styled.a`
-    color: ${ props => props.theme.colors.dark };
-
-    transition: ${ props => props.theme.transitions.link };
-
-    &:hover,
-    &:focus {
-        color: ${ props => props.theme.colors.primary };
-    }
-`;
-
-
-const Social = ( { links, type, fixedWidth } ) => {
-    return (
-        <SocialList>
-            {
-                links.map( ( { title, url } ) => {
-                    if ( url ) {
-                        return (
-                            <SocialListItem key={ title }>
-                                <SocialLink href={ url }>
-                                    <SocialIcon icon={ title } type={ type } fixedWidth={ fixedWidth } />
-                                </SocialLink>
-                            </SocialListItem>
-                        )
-                    }
-                })
+const query = graphql`
+    {
+        allWordpressWpApiMenusMenusItems( filter: {
+            name: {
+                eq: "Main Social Links"
             }
-        </SocialList>
+        }) {
+            edges {
+                node {
+                    items {
+                        title
+                        url
+                    }
+                }
+            }
+        }
+    }
+`;
+
+
+const Social = () => {
+    return (
+        <StaticQuery query={ query } render={ ( data ) => {
+            const links = data.allWordpressWpApiMenusMenusItems.edges[0].node.items;
+
+            return (
+                <SocialLinks links={ links } fixedWidth={ true } />
+            )
+        }} />
+
     );
 };
 

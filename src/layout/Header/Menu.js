@@ -8,11 +8,11 @@ import { transparentize } from 'polished';
 
 const MenuList = styled.ul`
     list-style: none;
-    margin: 4rem 0 0 0;
+    margin: 4rem 0 4rem 0;
     padding: 0;
 
     @media ( min-width: 858px ) {
-        margin: 0;
+        margin: 0 6rem 0 0;
     }
 `;
 

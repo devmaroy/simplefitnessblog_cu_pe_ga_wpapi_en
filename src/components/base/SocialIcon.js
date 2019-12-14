@@ -31,11 +31,7 @@ const SocialIcon = ( { icon, type, fixedWidth } ) => {
 
     }
 
-    return (
-        <div>
-            { renderIcon( type ) }
-        </div>
-    );
+    return renderIcon( type );
 };
 
 

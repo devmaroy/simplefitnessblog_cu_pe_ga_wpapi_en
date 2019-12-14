@@ -55,6 +55,10 @@ const Overlay = styled.div`
     opacity: ${ props => props.showMenu ? '.3' : '0' };
 
 	transition: opacity .25s ease, visibility 0s ease;
+
+    @media ( min-width: 858px ) {
+        display: none;
+    }
 `;
 
 
@@ -82,7 +86,7 @@ class Navigation extends Component {
     
                 <NavigationInner showMenu={ this.state.showMenu }>
                     <Menu />
-                    {/*<Social />*/}
+                    <Social />
                 </NavigationInner>
 
                 <Overlay showMenu={ this.state.showMenu } onClick={ this.toggleMenu } />
