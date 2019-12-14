@@ -17,18 +17,29 @@ const FooterInfo = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    color: ${ props => props.theme.colors.lightGray };
+    line-height: 2;
 
-    p {
-        margin: 0;
-        color: ${ props => props.theme.colors.lightGray };    
+    @media ( min-width: ${ props => props.theme.breakpoints.medium } ) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 `;
 
 
 const Copyright = styled.p`
+    margin: 0 1rem 0 0;
+
     &::before {
         content: '\u00A9 ';
     }
+`;
+
+
+const AuthorInfo = styled.p`
+    margin: 0;
 `;
 
 
@@ -53,7 +64,7 @@ const Footer = () => {
                 <FooterInfo>
                     <SiteLogo />
                     <Copyright>{ new Date().getFullYear() } All Rights Reserved.</Copyright>
-                    <p>Created by <AuthorLink href="https://marekmatejovic.cz/">Marek Matejovic</AuthorLink></p>
+                    <AuthorInfo>Created by <AuthorLink href="https://marekmatejovic.cz/">Marek Matejovic</AuthorLink></AuthorInfo>
                 </FooterInfo>
             </Container>
         </FooterWrapper>
