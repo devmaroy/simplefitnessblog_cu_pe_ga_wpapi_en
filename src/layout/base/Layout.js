@@ -18,7 +18,6 @@ library.add( fab, faClock, faGlobe );
 
 const GlobalStyles = createGlobalStyle`
     @import url('https://fonts.googleapis.com/css?family=Karla:400,400i,700,700i|Rubik:400,500,700,900&display=swap&subset=latin-ext');
-    @import url('https://fonts.googleapis.com/css?family=Catamaran:700&display=swap');
     
     html {
         font-size: 62.5%; 
@@ -26,8 +25,8 @@ const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        font-family: 'Karla', sans-serif;
-        font-size: 1.6rem;
+        font-family: ${ props => props.theme.fonts.primary };
+        font-size: ${ props => props.theme.fonts.sizes.normal };
         line-height: 1.6;
         background: ${ props => props.theme.colors.background };
         -webkit-font-smoothing: antialiased;
