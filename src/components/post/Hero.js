@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { allPostPropTypes } from '../../propTypeValues';
 import ConditionalWrapper from '../base/ConditionalWrapper';
 import Container from '../../layout/base/Container';
 import {
@@ -18,6 +20,7 @@ import {
     DateIcon,
     Time,
 } from '../elements/Hero';
+
 
 const Hero = ( { post, settings, styles } ) => {
     const { title, slug, categories, tags, author, date, plainDate, featured_media } = post;
@@ -95,6 +98,14 @@ Hero.defaultProps = {
     settings: {},
     styles: {},
 }
+
+
+// Proptypes
+Hero.propTypes = {
+    post: PropTypes.shape({
+        ...allPostPropTypes
+    }).isRequired,
+};
 
 
 export default Hero;

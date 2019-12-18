@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { withTheme } from 'styled-components';
+import styled from 'styled-components';
 import Container from '../base/Container';
 import SiteLogo from './SiteLogo';
 import Navigation from './Navigation';
@@ -19,7 +19,7 @@ const HeaderInner = styled.div`
 `;
 
 
-const Header = ( props ) => {
+const Header = () => {
     return (
         <HeaderWrapper>
             <Container>
@@ -32,10 +32,4 @@ const Header = ( props ) => {
     );
 };
 
-export default withTheme( Header );
-
-
-
-
-
-
+export default Header;

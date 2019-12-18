@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { allPostPropTypes, contextPropTypes } from '../propTypeValues';
 import styled from 'styled-components';
 import Layout from '../layout/base/Layout';
 import Container from '../layout/base/Container';
@@ -76,5 +78,24 @@ const TaxonomyBase = ( { info, content, context } ) => {
         </Layout>
     );
 };
+
+
+TaxonomyBase.propTypes = {
+    info: PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        type: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        slug: PropTypes.string.isRequired,
+    }).isRequired,
+    content: PropTypes.arrayOf( PropTypes.shape({
+        node: PropTypes.shape({
+            ...allPostPropTypes
+        }).isRequired
+    }).isRequired ).isRequired,
+    context: PropTypes.shape({
+        ...contextPropTypes
+    }).isRequired,
+};
+
 
 export default TaxonomyBase;

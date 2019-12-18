@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { pagePropTypes } from '../propTypeValues';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import Layout from '../layout/base/Layout';
@@ -26,6 +28,14 @@ const PageTemplate = ( { data } ) => {
         </Layout>
     );
 };
+
+
+// Proptypes
+Page.propTypes = {
+    page: PropTypes.shape({
+        ...pagePropTypes
+    })
+}; 
 
 
 export default PageTemplate;

@@ -1,8 +1,9 @@
 import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { Normalize } from 'styled-normalize';
 import theme from '../../theme/theme';
-import '../../WordpressCoreStyles.css';
+import  '../../WordpressCoreStyles.css';
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -51,6 +52,11 @@ const Layout = ( { children }) => {
             </Fragment>
         </ThemeProvider>
     );
+};
+
+
+Layout.propTypes = {
+    children: PropTypes.element.isRequired,
 };
 
 

@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { allPostPropTypes, contextPropTypes } from '../propTypeValues';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import Layout from '../layout/base/Layout';
@@ -52,6 +54,22 @@ const BlogListTemplate = ( { data, pageContext } ) => {
 };
 
 
+BlogListTemplate.propTypes = {
+    pageContext: PropTypes.shape({
+        ...contextPropTypes
+    }).isRequired,
+    data: PropTypes.shape({
+        allWordpressPost: PropTypes.shape({
+            edges: PropTypes.arrayOf( PropTypes.shape({
+                node: PropTypes.shape({
+                    ...allPostPropTypes
+                }).isRequired
+            }).isRequired ).isRequired,
+        }).isRequired
+    }).isRequired,
+};
+
+
 export default BlogListTemplate;
 
 
@@ -68,7 +86,6 @@ export const templateQuery = graphql`
                     slug
                     plainDate: date
                     date( formatString: "MMMM DD, YYYY" )
-                    excerpt
                     author {
                         name
                         url

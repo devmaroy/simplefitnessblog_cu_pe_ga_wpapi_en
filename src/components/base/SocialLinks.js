@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import SocialIcon from './SocialIcon';
 
@@ -47,6 +48,13 @@ const SocialLinks = ( { links, type, fixedWidth } ) => (
         }
     </SocialList>
 );
+
+
+SocialLinks.propTypes = {
+    links: PropTypes.array.isRequired,
+    type: PropTypes.string,
+    fixedWidth: PropTypes.bool,
+};
 
 
 export default SocialLinks;

@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { allPostPropTypes, taxonomyPropTypes, contextPropTypes } from '../propTypeValues';
 import { graphql } from 'gatsby';
 import TaxonomyBaseTemplate from './TaxonomyBase';
 
@@ -14,6 +16,23 @@ const CategoryListTemplate = ( { data, pageContext } ) => {
             <TaxonomyBaseTemplate info={ info } content={ data.posts.edges } context={ pageContext } />
         </div>
     );
+};
+
+
+CategoryListTemplate.propTypes = {
+    pageContext: PropTypes.shape({
+        ...contextPropTypes
+    }).isRequired,
+    data: PropTypes.shape({
+        category: PropTypes.shape({
+            ...taxonomyPropTypes
+        }).isRequired,
+        posts: PropTypes.shape({
+            edges: PropTypes.arrayOf( PropTypes.shape({
+                ...allPostPropTypes
+            }).isRequired )
+        }).isRequired 
+    }).isRequired,
 };
 
 
@@ -46,7 +65,6 @@ export const templateQuery = graphql`
                     slug
                     plainDate: date
                     date( formatString: "MMMM DD, YYYY" )
-                    excerpt
                     author {
                         name
                         url

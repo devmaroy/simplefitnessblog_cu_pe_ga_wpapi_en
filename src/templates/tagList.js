@@ -1,9 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { allPostPropTypes, taxonomyPropTypes, contextPropTypes } from '../propTypeValues';
 import { graphql } from 'gatsby';
 import TaxonomyBaseTemplate from './TaxonomyBase';
 
 
-const TagTemplate = ( { data, pageContext } ) => {
+const TagListTemplate = ( { data, pageContext } ) => {
     const info = {
         type: 'tag',
         ...data.tag
@@ -17,7 +19,26 @@ const TagTemplate = ( { data, pageContext } ) => {
 };
 
 
-export default TagTemplate;
+TagListTemplate.propTypes = {
+    pageContext: PropTypes.shape({
+        ...contextPropTypes
+    }).isRequired,
+    data: PropTypes.shape({
+        tag: PropTypes.shape({
+            ...taxonomyPropTypes
+        }).isRequired,
+        posts: PropTypes.shape({
+            edges: PropTypes.arrayOf( PropTypes.shape({
+                node: PropTypes.shape({
+                    ...allPostPropTypes
+                }).isRequired
+            }).isRequired )
+        }).isRequired 
+    }).isRequired,
+};
+
+
+export default TagListTemplate;
 
 
 
@@ -46,7 +67,6 @@ export const templateQuery = graphql`
                     slug
                     plainDate: date
                     date( formatString: "MMMM DD, YYYY" )
-                    excerpt
                     author {
                         name
                         url

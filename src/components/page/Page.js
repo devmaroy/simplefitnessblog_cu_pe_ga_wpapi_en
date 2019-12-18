@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { pagePropTypes } from '../../propTypeValues';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
@@ -45,7 +47,7 @@ const Title = styled.h1`
 
 
 const Page = ( { page } ) => {
-    const { title, content, featured_media, slug } = page;
+    const { title, slug, content, featured_media } = page;
 
     return (
         <article>
@@ -63,6 +65,14 @@ const Page = ( { page } ) => {
         </article>
     );
 };
+
+
+// Proptypes
+Page.propTypes = {
+    page: PropTypes.shape({
+        ...pagePropTypes
+    })
+}; 
 
 
 export default Page;

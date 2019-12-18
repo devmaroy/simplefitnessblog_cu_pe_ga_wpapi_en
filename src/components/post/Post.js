@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { singlePostPropTypes } from '../../propTypeValues';
 import styled from 'styled-components';
 import { lighten } from 'polished';
 import Hero from './Hero';
@@ -71,7 +73,7 @@ const FooterAuthorInfo = styled.div`
 
 
 const Post = ( { post } ) => {
-    const { author } = post;
+    const { content, author } = post;
 
     const disqusConfig = {
         shortname: process.env.GATSBY_DISQUS_NAME,
@@ -103,7 +105,7 @@ const Post = ( { post } ) => {
 
             <Container>
                 <ContentWrapper>
-                    <Content dangerouslySetInnerHTML={ { __html: post.content } } />
+                    <Content dangerouslySetInnerHTML={ { __html: content } } />
                 </ContentWrapper>
 
                 <Footer>
@@ -123,6 +125,13 @@ const Post = ( { post } ) => {
             </Container>
         </article>
     );
+};
+
+
+Post.propTypes = {
+    post: PropTypes.shape({
+        ...singlePostPropTypes
+    }).isRequired,
 };
 
 
