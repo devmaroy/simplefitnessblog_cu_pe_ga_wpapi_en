@@ -11,6 +11,7 @@ const MenuIcon = styled.button`
     outline: none;
     border: none;
     cursor: pointer;
+    background: none;
 
     @media ( min-width: ${ props => props.theme.breakpoints.medium } ) {
         display: none;
@@ -54,7 +55,7 @@ const Overlay = styled.div`
     visibility: ${ props => props.showMenu ? 'visible' : 'hidden' };
     opacity: ${ props => props.showMenu ? '.3' : '0' };
 
-	transition: opacity .25s ease, visibility 0s ease;
+	transition: opacity .25s ease, visibility .25s ease;
 
     @media ( min-width: ${ props => props.theme.breakpoints.medium } ) {
         display: none;

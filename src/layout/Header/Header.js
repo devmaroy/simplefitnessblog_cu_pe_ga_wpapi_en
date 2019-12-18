@@ -8,7 +8,7 @@ import Navigation from './Navigation';
 // Styles
 
 const HeaderWrapper = styled.header`
-    margin: 3rem 0;
+    margin: 2rem 0;
 `;
 
 
@@ -20,7 +20,6 @@ const HeaderInner = styled.div`
 
 
 const Header = ( props ) => {
-    console.log( props );
     return (
         <HeaderWrapper>
             <Container>

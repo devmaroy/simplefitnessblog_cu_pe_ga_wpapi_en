@@ -3,12 +3,17 @@ import styled from 'styled-components';
 import Layout from '../layout/base/Layout';
 import Container from '../layout/base/Container';
 import Preview from '../components/post/Preview';
+import Pagination from '../components/base/Pagination';
 
 
 // Styles
 
 const TaxonomiesWrapper = styled.div`
-   margin-top: 10rem;
+   margin-top: 4rem;
+
+   @media ( min-width: 830px ) {
+        margin-top: 8rem;
+    }
 `;
 
 
@@ -40,25 +45,32 @@ const TaxonomiesContent = styled.div`
 `;
 
 
-const TaxonomyBase = ( props ) => {
-    const { info, content } = props;
-    
+const TaxonomyBase = ( { info, content, context } ) => {
+    const { name, slug, type } = info;
+    const { currentPage, numPages } = context;
+
     return (
         <Layout>
             <Container>
                 <TaxonomiesWrapper>
                     <TaxonomiesInfo>
-                        Browsing { props.info.type }
-                        <strong dangerouslySetInnerHTML={ { __html: ` "${ info.name }"` } } />
+                        Browsing { type }
+                        <strong dangerouslySetInnerHTML={ { __html: ` "${ name }"` } } />
                     </TaxonomiesInfo>
 
                     <TaxonomiesContent>
                         {
-                            content.map( ( { node: post } ) => (
+                            content.map(( { node: post } ) => (
                                 <Preview key={ post.id } post={ post } />
                             ))
                         }
                     </TaxonomiesContent>
+
+                    <Pagination 
+                        numberOfPages={ numPages } 
+                        currentPage={ currentPage } 
+                        prefix={ `${ type }/${ slug }` }
+                    />
                 </TaxonomiesWrapper>
             </Container>
         </Layout>

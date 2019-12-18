@@ -7,18 +7,17 @@ import Preview from '../components/post/Preview';
 import Pagination from '../components/base/Pagination';
 
 
-
 // Styles
 
 const BlogListWrapper = styled.div`
     display: grid;
     grid-gap: 4rem;
+    margin-top: 4rem;
      
-
     @media ( min-width: 830px ) {
         grid-template-columns: repeat( 2, minmax( 0, 1fr ) );
         grid-gap: 2rem;
-        margin-top: 10rem;
+        margin-top: 8rem;
     }
 
     @media ( min-width: 1180px ) {
@@ -30,6 +29,8 @@ const BlogListWrapper = styled.div`
 const BlogListTemplate = ( { data, pageContext } ) => {
     const posts = data.allWordpressPost.edges;
     const { currentPage, numPages } = pageContext;
+
+    console.log( pageContext );
 
     return (
         <Layout>

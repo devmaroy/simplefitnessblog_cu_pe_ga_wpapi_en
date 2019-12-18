@@ -6,7 +6,7 @@ import Post from '../components/post/Post';
 
 const PostTemplate = ( { data } ) => {
     const { post } = data;
-
+    
     return (
         <Layout>
             <Post post={ post } />

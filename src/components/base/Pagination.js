@@ -42,6 +42,7 @@ const PaginationLink = styled( Link )`
 `;
 
 
+
 // Default props 
 
 PaginationLink.defaultProps = {
@@ -56,6 +57,8 @@ const Pagination = ( { numberOfPages, currentPage, prefix } ) => {
     const isLast = currentPage === numberOfPages;
     const previousPage = currentPage - 1 === 1 ? `/${ prefix }` : `/${ prefix }/${ currentPage - 1 }`;
     const nextPage = `/${ prefix }/${ currentPage + 1 }`;
+
+    console.log( numberOfPages, currentPage, prefix );
 
     return (
         <PaginationList>

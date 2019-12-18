@@ -16,7 +16,7 @@ const SocialListItem = styled.li`
     display: inline-block;
 
     &:not( :last-child ) {
-        margin-right: 2rem;
+        margin-right: 1.5rem;
     }
 `;
 

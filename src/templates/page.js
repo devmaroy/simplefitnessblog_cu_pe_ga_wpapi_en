@@ -9,7 +9,7 @@ import Page from '../components/page/Page';
 // Styles
 
 const PostWrapper = styled.div`
-    margin-top: 8rem;
+    margin-top: 6rem;
 `;
 
 
@@ -39,6 +39,15 @@ export const PageQuery = graphql`
             title
             slug
             content
+            featured_media {
+                localFile {
+                    childImageSharp {
+                        fluid( maxWidth: 1200, maxHeight: 700, quality: 100 ) {
+                            ...GatsbyImageSharpFluid
+                        }
+                    }
+                }
+            }
         }
     }
 `;

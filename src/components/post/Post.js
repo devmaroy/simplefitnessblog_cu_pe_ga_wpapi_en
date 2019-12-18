@@ -1,18 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 import { lighten } from 'polished';
-import { AuthorAvatar, AuthorName, Content } from '../elements/Content';
 import Hero from './Hero';
 import Container from '../../layout/base/Container';
+import {
+    ContentWrapper,
+    Content,
+} from '../elements/Content';
 import SocialLinks from '../base/SocialLinks';
 import { DiscussionEmbed } from 'disqus-react';
 
 
 // Styles
-
-const ContentWrapper = styled.div`
-    margin: 8rem 0;
-`;
 
 const Footer = styled.footer`
     background: ${ props => lighten( 0.51, props.theme.colors.lightGray ) };
@@ -31,34 +30,44 @@ const Footer = styled.footer`
     }
 `;
 
-const FooterAuthorAvatar = styled.div`
-    flex-shrink: 0;
-    margin-right: 3rem;
 
-    ${ AuthorAvatar } {
-        width: 8rem;
+const AuthorAvatar = styled.img`
+    border-radius: 50%;
+    width: 8rem;
+`;
+
+
+const AuthorName = styled.a`
+    text-decoration: none;
+    font-family: ${ props => props.theme.fonts.secondary };
+    font-size: 2.2rem;
+    font-weight: ${ props => props.theme.fonts.weights.medium };
+    color: ${ props => props.theme.colors.dark };
+ 
+    transition: color ${ props => props.theme.transitions.general };
+
+    &:hover,
+    &:focus {
+        color: ${ props => props.theme.colors.primary };
     }
 `;
+
+
+const FooterAuthorAvatar = styled.div`
+    flex-shrink: 0;
+    margin-bottom: 2rem;
+    
+    @media ( min-width: ${ props => props.theme.breakpoints.medium } ) {
+        margin-right: 3rem;
+    }
+`;
+
 
 const FooterAuthorInfo = styled.div`
     @media ( min-width: ${ props => props.theme.breakpoints.medium } ) {
         max-width: 80%;
     }
-
-    ${ AuthorName } {
-        font-family: ${ props => props.theme.fonts.secondary };
-        font-size: 2.2rem;
-        font-weight: ${ props => props.theme.fonts.weights.medium };
-        color: ${ props => props.theme.colors.dark };
-        margin: 0; 
-
-        &:hover,
-        &:focus {
-            color: ${ props => props.theme.colors.primary };
-        }
-    }
 `;
-
 
 
 const Post = ( { post } ) => {
@@ -74,7 +83,6 @@ const Post = ( { post } ) => {
     }
 
     const stylesContent = {
-        minHeight: '66rem',
         padding: '8rem 0'
     }
 
@@ -83,26 +91,26 @@ const Post = ( { post } ) => {
             <Hero
                 post={ post }
                 settings={{
+                    wrapContent: true,
                     largeTitle: true,
                     showTags: true,
-                    wrapContent: true
                 }}
                 styles={{
                     cover: stylesCover,
-                    content: stylesContent
+                    content: stylesContent,
                 }}
             />
-       
+
             <Container>
                 <ContentWrapper>
-                    <Content dangerouslySetInnerHTML={ { __html: post.content } } />       
+                    <Content dangerouslySetInnerHTML={ { __html: post.content } } />
                 </ContentWrapper>
 
                 <Footer>
                     <FooterAuthorAvatar>
                         <AuthorAvatar src={ author.avatar_urls.wordpress_96 } alt={ `Avatar for ${ author.name }` } />
                     </FooterAuthorAvatar>
-                
+
                     <FooterAuthorInfo>
                         <AuthorName href={ author.url }>{ author.name }</AuthorName>
                         <p>{ author.description }</p> 

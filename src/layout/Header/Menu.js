@@ -65,6 +65,10 @@ const MenuLink = styled( Link )`
 
     transition: color ${ props => props.theme.transitions.link };
 
+    &.active {
+        color: ${ props => props.theme.colors.primary };
+    }
+
     &:hover,
     &:focus {
         color: ${ props => props.theme.colors.primary };
@@ -88,7 +92,7 @@ const Menu = () => {
                         {
                             links.map( ( { title, object_slug } ) => (
                                 <MenuListItem key={ title }>
-                                    <MenuLink to={ `/${ object_slug }` }>{ title }</MenuLink>
+                                    <MenuLink to={ `/${ object_slug }` } activeClassName="active">{ title }</MenuLink>
                                 </MenuListItem>
                             ))
                         }

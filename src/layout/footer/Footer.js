@@ -8,18 +8,22 @@ import { darken } from 'polished';
 // Styles
 
 const FooterWrapper = styled.footer`
-    margin-top: 8rem;
-    margin-bottom: 2rem;
+    margin: 8rem 0 4rem 0;
 `;
 
 
 const FooterInfo = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+    text-align: center;
     color: ${ props => props.theme.colors.lightGray };
     line-height: 2;
+
+    @media ( min-width: 450px ) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        text-align: left;
+    }
 
     @media ( min-width: ${ props => props.theme.breakpoints.medium } ) {
         display: flex;

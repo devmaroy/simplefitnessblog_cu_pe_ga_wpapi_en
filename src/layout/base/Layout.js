@@ -39,7 +39,7 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 
-const Layout = ( { showPartials, children }) => {
+const Layout = ( { children }) => {
     return (
         <ThemeProvider theme={ theme }>
             <Fragment>
