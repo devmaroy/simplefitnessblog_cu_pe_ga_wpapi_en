@@ -33,25 +33,22 @@ const SocialLink = styled.a`
 `;
 
 
-const SocialLinks = ( { links, type, fixedWidth } ) => {
-    return (
-        <SocialList>
-            {
-                links.map( ( { title, url } ) => {
-                    if ( url ) {
-                        return (
-                            <SocialListItem key={ title }>
-                                <SocialLink href={ url }>
-                                    <SocialIcon icon={ title } type={ type } fixedWidth={ fixedWidth } />
-                                </SocialLink>
-                            </SocialListItem>
-                        )
-                    }
-                })
-            }
-        </SocialList>
-    );
-};
+const SocialLinks = ( { links, type, fixedWidth } ) => (
+    <SocialList>
+        {
+            links.filter(( { url } ) => url !== '' )
+                .map( ( { title, url }) => (
+                    <SocialListItem key={ title }>
+                        <SocialLink href={ url }>
+                            <SocialIcon icon={ title } type={ type } fixedWidth={ fixedWidth } />
+                        </SocialLink>
+                    </SocialListItem>
+                ))
+        }
+    </SocialList>
+);
+
+
 
 
 export default SocialLinks;

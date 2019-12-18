@@ -58,8 +58,6 @@ const Pagination = ( { numberOfPages, currentPage, prefix } ) => {
     const previousPage = currentPage - 1 === 1 ? `/${ prefix }` : `/${ prefix }/${ currentPage - 1 }`;
     const nextPage = `/${ prefix }/${ currentPage + 1 }`;
 
-    console.log( numberOfPages, currentPage, prefix );
-
     return (
         <PaginationList>
             {

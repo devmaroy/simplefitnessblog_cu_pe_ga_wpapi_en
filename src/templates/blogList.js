@@ -30,8 +30,6 @@ const BlogListTemplate = ( { data, pageContext } ) => {
     const posts = data.allWordpressPost.edges;
     const { currentPage, numPages } = pageContext;
 
-    console.log( pageContext );
-
     return (
         <Layout>
             <Container>
