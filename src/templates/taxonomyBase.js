@@ -11,7 +11,7 @@ import Pagination from '../components/base/Pagination';
 const TaxonomiesWrapper = styled.div`
    margin-top: 4rem;
 
-   @media ( min-width: 830px ) {
+   @media ( min-width: ${ props => props.theme.breakpoints.medium } ) {
         margin-top: 8rem;
     }
 `;
@@ -34,12 +34,12 @@ const TaxonomiesContent = styled.div`
     margin-top: 4rem;
      
 
-    @media ( min-width: 830px ) {
+    @media ( min-width: ${ props => props.theme.breakpoints.medium } ) {
         grid-template-columns: repeat( 2, minmax( 0, 1fr ) );
         grid-gap: 2rem;
     }
 
-    @media ( min-width: 1180px ) {
+    @media ( min-width: ${ props => props.theme.breakpoints.large } ) {
         grid-template-columns: repeat( 3, minmax( 0, 1fr ) );
     }
 `;

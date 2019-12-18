@@ -112,7 +112,8 @@ const elements = {
 // Breakpoints
 const breakpoints = {
     medium: '900px',
-    large: '1750px'
+    large: '1180px',
+    xlarge: '1750px'
 };
 
 

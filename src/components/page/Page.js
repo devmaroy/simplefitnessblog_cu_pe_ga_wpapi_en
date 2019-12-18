@@ -45,12 +45,12 @@ const Title = styled.h1`
 
 
 const Page = ( { page } ) => {
-    const { title, content, featured_media } = page;
+    const { title, content, featured_media, slug } = page;
 
     return (
         <article>
             <header>
-                <TitleLink>
+                <TitleLink to={ `/${ slug }` }>
                     <Title>{ title }</Title>
                 </TitleLink>
 
@@ -58,7 +58,7 @@ const Page = ( { page } ) => {
             </header>
 
             <ContentWrapper>
-                <Content dangerouslySetInnerHTML={{ __html: content } } />
+                <Content dangerouslySetInnerHTML={ { __html: content } } />
             </ContentWrapper>
         </article>
     );

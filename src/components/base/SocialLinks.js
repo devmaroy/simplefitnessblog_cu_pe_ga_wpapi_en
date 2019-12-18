@@ -36,7 +36,7 @@ const SocialLink = styled.a`
 const SocialLinks = ( { links, type, fixedWidth } ) => (
     <SocialList>
         {
-            links.filter(( { url } ) => url !== '' )
+            links.filter( ( { url } ) => url !== '' )
                 .map( ( { title, url }) => (
                     <SocialListItem key={ title }>
                         <SocialLink href={ url }>
@@ -47,8 +47,6 @@ const SocialLinks = ( { links, type, fixedWidth } ) => (
         }
     </SocialList>
 );
-
-
 
 
 export default SocialLinks;

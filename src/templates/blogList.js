@@ -14,13 +14,13 @@ const BlogListWrapper = styled.div`
     grid-gap: 4rem;
     margin-top: 4rem;
      
-    @media ( min-width: 830px ) {
+    @media ( min-width: ${ props => props.theme.breakpoints.medium } ) {
         grid-template-columns: repeat( 2, minmax( 0, 1fr ) );
         grid-gap: 2rem;
         margin-top: 8rem;
     }
 
-    @media ( min-width: 1180px ) {
+    @media ( min-width: ${ props => props.theme.breakpoints.large } ) {
         grid-template-columns: repeat( 3, minmax( 0, 1fr ) );
     }
 `;

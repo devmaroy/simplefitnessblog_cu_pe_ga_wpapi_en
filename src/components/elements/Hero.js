@@ -9,6 +9,7 @@ import BackgroundImage from 'gatsby-background-image';
 
 export const Thumbnail = styled( BackgroundImage )`
     display: flex;
+    width: 100%;
 
     &::before,
     &::after {
@@ -34,7 +35,7 @@ export const ThumbnailContent = styled.header`
 
 ThumbnailContent.defaultProps = {
     styled: {
-        padding: '2rem'
+        padding: '2.5rem'
     }
 }
 
