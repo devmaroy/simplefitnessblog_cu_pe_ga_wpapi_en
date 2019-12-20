@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { allPostPropTypes, taxonomyPropTypes, contextPropTypes } from '../propTypeValues';
 import { graphql } from 'gatsby';
-import TaxonomyBaseTemplate from './TaxonomyBase';
+import TaxonomyBaseTemplate from './taxonomyBase';
 
 
 const CategoryListTemplate = ( { data, pageContext } ) => {
