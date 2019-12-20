@@ -1,6 +1,3 @@
-const path = require( 'path' );
-const slash = require( 'slash' );
-
 const createPages = require( './utils/createPages' );
 const createPosts = require( './utils/createPosts' );
 const createCategories = require( './utils/createCategories' );

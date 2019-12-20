@@ -29,7 +29,9 @@ CategoryListTemplate.propTypes = {
         }).isRequired,
         posts: PropTypes.shape({
             edges: PropTypes.arrayOf( PropTypes.shape({
-                ...allPostPropTypes
+                node: PropTypes.shape({
+                    ...allPostPropTypes
+                }).isRequired
             }).isRequired )
         }).isRequired 
     }).isRequired,
