@@ -5,19 +5,6 @@ const base = {
 
 
 // Colors
-/*const colors = {
-    primary: '#F0386B',
-    secondary: '#F8C0C8',
-    light: '#FFF',
-    dark: '#403c3d',
-    gray: '#5a595c',
-    lightGray: '#adadad',
-    veryLightGray: '#cac9c9',
-    background: '#FFF',
-    transparentBlack: 'rgba( 0, 0, 0, .5 )',
-    overlayLinearGradient: 'linear-gradient( rgba( 0, 0, 0, 0.5 ), rgba( 0, 0, 0, 0.5 ) )',
-}*/
-
 const colors = {
     primary: '#3772FF',
     secondary: '#000',

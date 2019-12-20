@@ -4,6 +4,7 @@ import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { Normalize } from 'styled-normalize';
 import theme from '../../theme/theme';
 import  '../../WordpressCoreStyles.css';
+import Favicon from '../../components/base/Favicon';
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -45,6 +46,7 @@ const Layout = ( { children }) => {
             <Fragment>
                 <GlobalStyles />
                 <Normalize />
+                <Favicon />
                 <Header />
                 { children }
                 <Footer />
