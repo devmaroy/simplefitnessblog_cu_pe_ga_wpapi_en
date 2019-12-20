@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { Normalize } from 'styled-normalize';
 import theme from '../../theme/theme';
-import  '../../WordpressCoreStyles.css';
+import  '../../wordpresscorestyles.css';
 import Favicon from '../../components/base/Favicon';
 import Header from '../header/header';
 import Footer from '../footer/footer';

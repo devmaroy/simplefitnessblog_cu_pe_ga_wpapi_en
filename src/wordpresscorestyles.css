@@ -1026,6 +1026,7 @@ Footer
     color: #333;
     border-color: #f7ca18;
 }
+
 .page-numbers:hover, .page-numbers:focus , .page-numbers:active{
     background-color: #f7ca18;
     color: #fff !important;
