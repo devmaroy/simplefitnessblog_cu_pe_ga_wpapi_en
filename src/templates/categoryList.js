@@ -45,9 +45,7 @@ export default CategoryListTemplate;
 export const templateQuery = graphql`
     query( $id: String!, $skip: Int!, $limit: Int! ) {
         category: wordpressCategory( id: { eq: $id } ) {
-            id
-            name
-            slug
+            ...CategoryData
         }
         posts: allWordpressPost( limit: $limit, skip: $skip, filter: {
             categories: {
@@ -60,33 +58,7 @@ export const templateQuery = graphql`
         }) {
             edges {
                 node {
-                    id
-                    title
-                    slug
-                    plainDate: date
-                    date( formatString: "MMMM DD, YYYY" )
-                    author {
-                        name
-                        url
-                        description
-                        avatar_urls {
-                            wordpress_96
-                        }
-                    }
-                    categories {
-                        id
-                        name
-                        slug
-                    }
-                    featured_media {
-                        localFile {
-                            childImageSharp {
-                                fluid( maxWidth: 2560, quality: 100 ) {
-                                    ...GatsbyImageSharpFluid
-                                }
-                            }
-                        }
-                    }
+                    ...AllPostData
                 }
             }
         }

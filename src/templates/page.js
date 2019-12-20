@@ -45,19 +45,7 @@ export default PageTemplate;
 export const PageQuery = graphql`
     query( $id: String! ) {
         page: wordpressPage( id: { eq: $id } ) {
-            id
-            title
-            slug
-            content
-            featured_media {
-                localFile {
-                    childImageSharp {
-                        fluid( maxWidth: 1200, maxHeight: 700, quality: 100 ) {
-                            ...GatsbyImageSharpFluid
-                        }
-                    }
-                }
-            }
+            ...PageData
         }
     }
 `;
