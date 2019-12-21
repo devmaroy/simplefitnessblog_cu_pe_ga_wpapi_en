@@ -8,7 +8,6 @@ exports.createPages = async ( { graphql, actions } ) => {
     const { createPage, createRedirect } = actions;
     createRedirect( { fromPath: '/', toPath: '/blog', redirectInBrowser: true, isPermanent: true } );
 
-
     // Create graphql query
     const result = await graphql(`
         {
