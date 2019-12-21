@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import '@fortawesome/fontawesome-svg-core/styles.css';
 import PropTypes from 'prop-types';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { Normalize } from 'styled-normalize';
