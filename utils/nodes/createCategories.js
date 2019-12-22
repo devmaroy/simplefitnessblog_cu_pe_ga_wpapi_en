@@ -1,23 +1,23 @@
 const createPagination = require( './createPagination' );
-const tagListTemplate = require.resolve( '../src/templates/tagList.js' );
+const categoryListTemplate = require.resolve( '../../src/templates/categoryList.js' );
 
 
 module.exports = ( { data, createPage } ) => {
 
-    // Create tags
+    // Create categories
     data.edges.map( ( { node } ) => {
         
-        // Create paginated tags for tag list
+        // Create paginated categories for category list
         const perPage = 9;
 
         createPagination({
             perPage,
             numPages: Math.ceil( node.count / perPage ),
-            prefix: 'tag',
+            prefix: 'category',
             slug: node.slug,
             toContext: { id: node.id },
             createPage,
-            component: tagListTemplate,
+            component: categoryListTemplate,
         });
     });
 };

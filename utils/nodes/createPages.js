@@ -1,5 +1,5 @@
 const slash = require( 'slash' );
-const pageTemplate = require.resolve( '../src/templates/page.js' );
+const pageTemplate = require.resolve( '../../src/templates/page.js' );
 
 
 module.exports = ( { data, createPage } ) => {

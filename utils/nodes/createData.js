@@ -1,8 +1,8 @@
 const slash = require( 'slash' );
-const pageTemplate = require.resolve( '../src/templates/page.js' );
-const postTemplate = require.resolve( '../src/templates/post.js' );
-const categoryListTemplate = require.resolve( '../src/templates/categoryList.js' );
-const tagListTemplate = require.resolve( '../src/templates/tagList.js' );
+const pageTemplate = require.resolve( '../../src/templates/page.js' );
+const postTemplate = require.resolve( '../../src/templates/post.js' );
+const categoryListTemplate = require.resolve( '../../src/templates/categoryList.js' );
+const tagListTemplate = require.resolve( '../../src/templates/tagList.js' );
 
 console.log( 'helllo');
 

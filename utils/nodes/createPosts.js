@@ -1,7 +1,7 @@
 const slash = require( 'slash' );
 const createPagination = require( './createPagination' );
-const postTemplate = require.resolve( '../src/templates/post.js' );
-const blogListTemplate = require.resolve( '../src/templates/blogList.js' );
+const postTemplate = require.resolve( '../../src/templates/post.js' );
+const blogListTemplate = require.resolve( '../../src/templates/blogList.js' );
 
 
 module.exports = ( { data, createPage } ) => {
