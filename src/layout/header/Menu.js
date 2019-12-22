@@ -104,9 +104,9 @@ const Menu = () => {
                                 <MenuListItem key={ object_id }>
                                     {
                                         isExternalLink( url, wordpressUrl ) ? (
-                                            <MenuLink href={ url } as="a">{ title }</MenuLink>
+                                            <MenuLink href={ url } as="a" activeClassName="active">{ title }</MenuLink>
                                         ) : (
-                                            <MenuLink to={ createLocalLink( url, wordpressUrl )  }>{ title }</MenuLink>
+                                            <MenuLink to={ createLocalLink( url, wordpressUrl ) } activeClassName="active">{ title }</MenuLink>
                                         )
                                     }
                                 </MenuListItem>
