@@ -21,7 +21,7 @@ For any questions feel free to contact me at marek@matejovic.cz
 
 <br />
 
----
+
 
 <br>
 
@@ -36,7 +36,7 @@ For any questions feel free to contact me at marek@matejovic.cz
 
 <br>
 
----
+
 
 <br>
 
@@ -66,7 +66,7 @@ For any questions feel free to contact me at marek@matejovic.cz
 
 <br>
 
----
+
 
 <br>
 
@@ -119,7 +119,7 @@ A quick look at the top-level files and directories you'll see in my project.
 
 <br>
 
----
+
 
 <br>
 
@@ -129,7 +129,7 @@ A quick look at the top-level files and directories you'll see in my project.
 
 <br>
 
----
+
 
 <br>
 
