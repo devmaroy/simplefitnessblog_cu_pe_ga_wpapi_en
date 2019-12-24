@@ -5,7 +5,7 @@ import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { Normalize } from 'styled-normalize';
 import theme from '../../theme/theme';
 import  '../../wordpresscorestyles.css';
-import Favicon from '../../components/base/Favicon';
+import Meta from '../../components/base/Meta';
 import Header from '../header/header';
 import Footer from '../footer/footer';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -47,7 +47,7 @@ const Layout = ( { children }) => {
             <Fragment>
                 <GlobalStyles />
                 <Normalize />
-                <Favicon />
+                <Meta />
                 <Header />
                 { children }
                 <Footer />
