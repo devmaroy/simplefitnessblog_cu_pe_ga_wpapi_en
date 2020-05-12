@@ -1,71 +1,51 @@
-<p align="center">
-    <a href="https://simplefitnessblog-mmproj.netlify.com">
-        <img alt="Gatsby" src="src/images/logo.png" width="80" />
-    </a>
-</p>
+![](src/images/logo.svg)
+# **Simple Fitness Blog**
 
-<h1 align="center">
-    Simple Fitness Blog
-</h1>
+
+This project is powered by **Gatsby** and **WordPress**. You can modify and use this project or certain components if you wish
+
 
 <br>
+
 
 ![](screenshot.png)
 
 
 <br>
 
-This project is powered by **Gatsby** and **WordPress**. You can modify and use this project or certain components if you wish.
+## Installation ##
 
-For any questions feel free to contact me at hello@devmaroy.com
-
-<br />
-
-
-
-<br>
-
-## Table of Contents
-
-- [Table of Contents](#table-of-contents)
-- [Quick Start](#quick-start)
-- [Structure](#structure)
-- [Live Example](#live-example)
-- [Contact](#contact)
-
-
-<br>
-
-
-
-<br>
-
-## Quick Start
+Use these commands to install the dependencies and start the server.
 
 1. **Clone from Github**
+
     ```
-    git clone git@github.com:devmaroy/simpletfitnessblog.git
+    $ git clone git@github.com:devmaroy/simplefitnessblog.git
     ```
 2. **Install dependencies**
    ```
-   yarn install / npm install
+   $ yarn install / npm install
    ```
-3. **Run Gatsby command**
-   
-   Navigate into your directory where you cloned repository and start it up.
+3. **Navigate into your directory where you cloned repository**
     ```
-    cd my-folder
-
-    gatsby develop
+    $ cd my-folder
     ```
+4. **Open .env file and set your own settings**
 
+    You will need a website where data lives (WP site with REST API) - **API_URL**
+
+    And also the protocol the website uses (https or http) (WP site with REST API) - **API_PROTOCOL**
+
+    Disquis chat ID (reqister new if you dont have one) - **GATSBY_DISQUS_NAME**
+
+
+5. **Start it up**
+    ```
+    $ gatsby develop
+    ```
 <br>
 
 **Your site is now running at `http://localhost:8000`!**
-
-
-<br>
-
 
 
 <br>
@@ -80,16 +60,15 @@ A quick look at the top-level files and directories you'll see in my project.
     ├── src
     ├── utils
     ├── .gitignore
-    ├── .prettierrc
     ├── gatsby-browser.js
     ├── gatsby-config.js
     ├── gatsby-node.js
     ├── gatsby-ssr.js
-    ├── LICENSE
     ├── package-lock.json
     ├── package.json
     ├── screenshot.png
     ├── yarn.lock
+    ├── .env.example
     └── README.md
 
 <br>
@@ -102,42 +81,34 @@ A quick look at the top-level files and directories you'll see in my project.
 
 4.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
 
-5.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of code consistent.
+5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
 
-6.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where is information about site (metadata) like the site title and description, Gatsby plugins, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
 
-7.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where is information about site (metadata) like the site title and description, Gatsby plugins, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
+7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
 
-8.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
 
-9.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+9.   **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of npm dependencies that were installed for project. **(You won’t change this file directly).**
 
-10.  **`LICENSE`**: Gatsby is licensed under the MIT license.
+10. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for project.
 
-11.  **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of npm dependencies that were installed for project. **(You won’t change this file directly).**
+11. **`.env.example`**: This file is an example for .env file you need to create if you want to run this project.
 
-12. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for project.
-
-13. **`README.md`**: A text file containing useful reference information about project.
-
-<br>
-
+12. **`README.md`**: A text file containing useful reference information about project.
 
 
 <br>
 
-##  Live Example 
-🔗[simplefitnessblog-mmproj.netlify.com](simplefitnessblog-mmproj.netlify.com)
-
+<hr>
 
 <br>
 
-
+###  Live example: 
+[simplefitnessblog-mmproj.netlify.com](https://simplefitnessblog-mmproj.netlify.com)
 
 <br>
 
-## Contact
+Created by **[@devmaroy](https://twitter.com/devmaroy)** feel free to contact me 
 
-Created by **[@devmaroy](twitter.com/devmaroy)** - feel free to contact me
-
-via e-mail **[hello@devmaroy.com]([hello@devmaroy.com)**
+E-mail: **[hello@devmaroy.com](hello@devmaroy.com)****
