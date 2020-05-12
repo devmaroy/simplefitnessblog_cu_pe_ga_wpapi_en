@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="https://simplefitnessblog.netlify.com">
+    <a href="https://simplefitnessblog-mmproj.netlify.com">
         <img alt="Gatsby" src="src/images/logo.png" width="80" />
     </a>
 </p>
@@ -17,7 +17,7 @@
 
 This project is powered by **Gatsby** and **WordPress**. You can modify and use this project or certain components if you wish.
 
-For any questions feel free to contact me at marek@matejovic.cz
+For any questions feel free to contact me at hello@devmaroy.com
 
 <br />
 
@@ -44,7 +44,7 @@ For any questions feel free to contact me at marek@matejovic.cz
 
 1. **Clone from Github**
     ```
-    git clone git@github.com:mmatejovic/simpletfitnessblog.git
+    git clone git@github.com:devmaroy/simpletfitnessblog.git
     ```
 2. **Install dependencies**
    ```
@@ -127,7 +127,7 @@ A quick look at the top-level files and directories you'll see in my project.
 <br>
 
 ##  Live Example 
-🔗[simplefitnessblog.netlify.com](simplefitnessblog.netlify.com)
+🔗[simplefitnessblog-mmproj.netlify.com](simplefitnessblog-mmproj.netlify.com)
 
 
 <br>
@@ -138,6 +138,6 @@ A quick look at the top-level files and directories you'll see in my project.
 
 ## Contact
 
-Created by **[@mmatejovic](twitter.com/mmatejovic)** - feel free to contact me
+Created by **[@devmaroy](twitter.com/devmaroy)** - feel free to contact me
 
-via e-mail **[marek@matejovic.cz](marek@matejovic.cz)**
+via e-mail **[hello@devmaroy.com]([hello@devmaroy.com)**
