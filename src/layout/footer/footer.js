@@ -68,7 +68,7 @@ const Footer = () => {
                 <FooterInfo>
                     <SiteLogo />
                     <Copyright>{ new Date().getFullYear() } All Rights Reserved.</Copyright>
-                    <AuthorInfo>Created by <AuthorLink href="https://marekmatejovic.cz/">Marek Matejovic</AuthorLink></AuthorInfo>
+                    <AuthorInfo>Created by <AuthorLink href="https://marekmatejovic.com/">devmaroy</AuthorLink></AuthorInfo>
                 </FooterInfo>
             </Container>
         </FooterWrapper>
