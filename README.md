@@ -1,4 +1,4 @@
-<img src="src/images/logo.svg" width="100">
+<img src="src/images/logo.png" width="100">
 
 # **Simple Fitness Blog**
 
