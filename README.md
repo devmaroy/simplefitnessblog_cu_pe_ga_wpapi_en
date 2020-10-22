@@ -76,11 +76,11 @@ A quick look at the top-level files and directories you'll see in my project.
 
 3.  **`/utils`**: This directory will contain all of the helpers functions and files for better code management. The main use case here is to separate logic into multiple files instead of one (especially gatsby-node can get large) and few helper functions.
 
-4.  **`.prettierignore`**: Configuration file for prettier - for files to ignore.
+4.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
 
-5.  **`.prettierrc`**: Configuration file for prettier.
+5.  **`.prettierignore`**: Configuration file for prettier - for files to ignore.
 
-6.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
+6.  **`.prettierrc`**: Configuration file for prettier.
 
 7.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
 
@@ -94,9 +94,13 @@ A quick look at the top-level files and directories you'll see in my project.
 
 12. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for project.
 
-13. **`.env.example`**: This file is an example for .env file you need to create if you want to run this project.
+13. **`screenshot.png`**: Screenshots of the final website.
 
-14. **`README.md`**: A text file containing useful reference information about project.
+14. **`yarn.lock`**: There is an identifier for every dependency and sub dependency that is used for a project.
+
+15. **`.env.example`**: This file is an example for .env file you need to create if you want to run this project.
+
+16. **`README.md`**: A text file containing useful reference information about project.
 
 <br>
 
