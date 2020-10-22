@@ -61,7 +61,6 @@ A quick look at the top-level files and directories you'll see in my project.
     ├── gatsby-config.js
     ├── gatsby-node.js
     ├── gatsby-ssr.js
-    ├── package-lock.json
     ├── package.json
     ├── screenshot.png
     ├── yarn.lock
@@ -90,17 +89,15 @@ A quick look at the top-level files and directories you'll see in my project.
 
 10. **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
 
-11. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of npm dependencies that were installed for project. **(You won’t change this file directly).**
+11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for project.
 
-12. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for project.
+12. **`screenshot.png`**: Screenshots of the final website.
 
-13. **`screenshot.png`**: Screenshots of the final website.
+13. **`yarn.lock`**: There is an identifier for every dependency and sub dependency that is used for a project.
 
-14. **`yarn.lock`**: There is an identifier for every dependency and sub dependency that is used for a project.
+14. **`.env.example`**: This file is an example for .env file you need to create if you want to run this project.
 
-15. **`.env.example`**: This file is an example for .env file you need to create if you want to run this project.
-
-16. **`README.md`**: A text file containing useful reference information about project.
+15. **`README.md`**: A text file containing useful reference information about project.
 
 <br>
 
